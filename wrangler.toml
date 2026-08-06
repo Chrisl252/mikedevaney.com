@@ -1,0 +1,12 @@
+name = "mike-devaney-proxy"
+compatibility_date = "2026-08-01"
+
+routes = [
+  { pattern = "mike-devaney.com/*", zone_name = "mike-devaney.com" },
+  { pattern = "www.mike-devaney.com/*", zone_name = "mike-devaney.com" }
+]
+
+# Static site served directly by the Worker (no Pages, no proxy hop).
+# Deploy: npm run deploy  (stages files into dist/ then `wrangler deploy`)
+[assets]
+directory = "./dist"
