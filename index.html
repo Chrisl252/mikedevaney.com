@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike DeVaney — PBA Tour Champion Bowling Coach</title>
+    <meta name="description" content="Request private bowling lessons with 2-time PBA Tour Champion Mike DeVaney. Noblesville / Indianapolis, IN & Virtual worldwide. Cash only for in-person sessions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0c10;
+            --card-bg: rgba(22, 27, 38, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-border-active: #2f80ed;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --text-dim: #64748b;
+            --accent-blue: #2f80ed;
+            --accent-blue-hover: #1e6bd6;
+            --accent-green: #27ae60;
+            --accent-green-bg: rgba(39, 174, 96, 0.12);
+            --radius-main: 16px;
+            --radius-btn: 99px;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow Backdrop */
+        .ambient-glow {
+            position: fixed;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(47, 128, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top Bar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 12, 16, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .pba-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: rgba(47, 128, 237, 0.15);
+            color: var(--accent-blue);
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(47, 128, 237, 0.3);
+            text-transform: uppercase;
+        }
+
+        .call-btn {
+            background: var(--accent-blue);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.55rem 1.25rem;
+            border-radius: var(--radius-btn);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .call-btn:hover { background: var(--accent-blue-hover); }
+
+        .nav-portal {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+
+        .nav-portal:hover { color: var(--text-main); }
+
+        /* Container */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-sub);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Appointment Request Box */
+        .appointment-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            margin-bottom: 4rem;
+        }
+
+        .card-header {
+            margin-bottom: 2rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-header p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .cash-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent-green-bg);
+            color: var(--accent-green);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 0.75rem;
+        }
+
+        /* Service Selection Cards */
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-box {
+            background: rgba(10, 12, 16, 0.6);
+            border: 2px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .service-box:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .service-box.active {
+            border-color: var(--accent-blue);
+            background: rgba(47, 128, 237, 0.08);
+        }
+
+        .service-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .service-meta {
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Simple Inputs */
+        .input-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .input-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            display: block;
+            color: var(--text-main);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            background: rgba(10, 12, 16, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent-blue);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-btn);
+            padding: 1rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-blue-hover);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        /* Success Card */
+        .success-box {
+            display: none;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.25rem;
+        }
+
+        .summary-pill {
+            background: rgba(10, 12, 16, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.25rem;
+            max-width: 420px;
+            margin: 1.5rem auto;
+            text-align: left;
+        }
+
+        /* Verified Photos Gallery */
+        .section-heading {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 4rem;
+        }
+
+        .photo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            overflow: hidden;
+        }
+
+        .photo-card img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-caption {
+            padding: 0.85rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-sub);
+            border-top: 1px solid var(--card-border);
+            background: rgba(10, 12, 16, 0.4);
+        }
+
+        /* Minimal Portal Drawer */
+        .portal-drawer {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .portal-drawer.active { display: block; }
+
+        .ledger-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+        }
+
+        .ledger-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            color: var(--text-sub);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .ledger-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            padding: 3rem 0;
+            border-top: 1px solid var(--card-border);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .service-options, .photo-grid { grid-template-columns: 1fr; }
+            .appointment-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                Mike DeVaney <span class="pba-badge">2x PBA Champion</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+                <span class="nav-portal" onclick="promptPortal()">Coach Portal</span>
+                <a href="tel:7027011494" class="call-btn">Call (702) 701-1494</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="publicView">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-location">📍 Noblesville / Indianapolis, IN & Virtual</div>
+                <h1 class="hero-title">Bowling Coaching with a Champion</h1>
+                <p class="hero-subtitle">Elevate your release, ball motion, and lane adjustments with 2-time PBA Tour Champion Mike DeVaney.</p>
+            </div>
+
+            <!-- Effortless Appointment Request Form -->
+            <div class="appointment-card">
+                <div class="card-header">
+                    <h2>Request an Appointment</h2>
+                    <p>Select your lesson format and submit your contact info below. Mike will reach out directly to confirm your time.</p>
+                    <div class="cash-pill">💵 In-Person Lessons: Cash Only at Session</div>
+                </div>
+
+                <form id="apptForm" onsubmit="handleAppointment(event)">
+                    <!-- Step 1: Format Selection -->
+                    <label class="input-label">1. Select Coaching Format</label>
+                    <div class="service-options">
+                        <div class="service-box active" onclick="pickFormat(this, '1-on-1 In-Person (Noblesville / Indy, IN)')">
+                            <div class="service-title">1-on-1 In-Person</div>
+                            <div class="service-meta">Noblesville / Indy, IN</div>
+                        </div>
+
+                        <div class="service-box" onclick="pickFormat(this, 'Virtual Video Review (Worldwide)')">
+                            <div class="service-title">Virtual Video Breakdown</div>
+                            <div class="service-meta">Worldwide Online</div>
+                        </div>
+
+                        <div class="service-box" onclick="pickFormat(this, 'Arsenal & Fit Consultation')">
+                            <div class="service-title">Equipment & Fit Audit</div>
+                            <div class="service-meta">Grip & Ball Review</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact Info -->
+                    <div class="input-group">
+                        <label class="input-label">2. Your Full Name</label>
+                        <input type="text" class="input-field" id="pName" required placeholder="John Smith">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">3. Phone Number or Email</label>
+                        <input type="text" class="input-field" id="pContact" required placeholder="(317) 555-0199 or email@example.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">4. Preferred Days / Notes (Optional)</label>
+                        <input type="text" class="input-field" id="pNotes" placeholder="e.g. Saturdays, weekday afternoons, spare shooting help...">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Appointment &rarr;</button>
+                </form>
+
+                <!-- Success Confirmation -->
+                <div class="success-box" id="successBox">
+                    <div class="success-icon">&checkmark;</div>
+                    <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.25rem;">Appointment Requested</h3>
+                    <p style="color: var(--text-sub); font-size: 0.95rem;">Mike DeVaney will contact you shortly to confirm your time slot.</p>
+
+                    <div class="summary-pill">
+                        <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 0.25rem;" id="sumFormat">1-on-1 In-Person</div>
+                        <div style="color: var(--text-sub); font-size: 0.9rem;" id="sumContact">Contact: John Smith</div>
+                        <div style="color: var(--accent-green); font-size: 0.85rem; font-weight: 700; margin-top: 0.5rem;">💵 Payment: Cash Only at lesson</div>
+                        <div style="color: var(--text-dim); font-size: 0.8rem; margin-top: 0.25rem;" id="sumRef">Ref #: MD-8492</div>
+                    </div>
+
+                    <button class="call-btn" style="background: var(--card-border); color: var(--text-main);" onclick="resetForm()">Request Another Lesson</button>
+                </div>
+            </div>
+
+            <!-- Verified PBA Match Photos Gallery -->
+            <div class="section-heading">
+                <span>Verified PBA Telecast Photos</span>
+                <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-sub);">Official PBA Footage</span>
+            </div>
+
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_02.jpg" alt="Mike DeVaney Official PBA Profile">
+                    <div class="photo-caption">Official PBA Player Profile & Interview Feature</div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_pba_07.jpg" alt="Mike DeVaney World Series Interview">
+                    <div class="photo-caption">2012 GEICO PBA World Series of Bowling Interview</div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_pba_02.jpg" alt="Mike DeVaney USBC Masters Match">
+                    <div class="photo-caption">2015 USBC Masters Telecast Match vs. Pete Weber</div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_pba_01.jpg" alt="Mike DeVaney Silverado Open">
+                    <div class="photo-caption">2012 Silverado National Open Player Feature</div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_pba_05.jpg" alt="Mike DeVaney PBA Showdown">
+                    <div class="photo-caption">2010 USBC PBA Experience Showdown Finals</div>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/mike_devaney_pba_08.jpg" alt="Mike DeVaney Strikes">
+                    <div class="photo-caption">PBA Pro Tour Match Play & Strike Execution</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach Portal Drawer -->
+        <div id="portalView" class="portal-drawer">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>Coach Portal — Appointment Requests</h2>
+                <button class="call-btn" style="background: var(--card-border);" onclick="showPublicView()">&larr; Back to Site</button>
+            </div>
+
+            <table class="ledger-table">
+                <thead>
+                    <tr>
+                        <th>Ref #</th>
+                        <th>Student Name</th>
+                        <th>Format</th>
+                        <th>Contact</th>
+                        <th>Notes / Preferred Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="portalTableBody">
+                    <!-- Populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mike DeVaney Bowling Coaching. Verified PBA Profile: <a href="https://www.pba.com/players/mike-devaney" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">PBA.com/players/mike-devaney</a></p>
+    </footer>
+
+    <script>
+        let selectedFormat = '1-on-1 In-Person (Noblesville / Indy, IN)';
+        let appts = JSON.parse(localStorage.getItem('md_appts') || '[]');
+
+        if (appts.length === 0) {
+            appts = [
+                {
+                    id: 'MD-9102',
+                    format: '1-on-1 In-Person (Noblesville / Indy, IN)',
+                    name: 'Dave Miller',
+                    contact: '(317) 555-0144',
+                    notes: 'Saturdays around noon. Spare shooting help.'
+                }
+            ];
+            saveAppts();
+        }
+
+        function saveAppts() {
+            localStorage.setItem('md_appts', JSON.stringify(appts));
+        }
+
+        function pickFormat(element, formatTitle) {
+            document.querySelectorAll('.service-box').forEach(box => box.classList.remove('active'));
+            element.classList.add('active');
+            selectedFormat = formatTitle;
+        }
+
+        function handleAppointment(e) {
+            e.preventDefault();
+            const name = document.getElementById('pName').value;
+            const contact = document.getElementById('pContact').value;
+            const notes = document.getElementById('pNotes').value || 'None';
+            const refId = 'MD-' + Math.floor(1000 + Math.random() * 9000);
+
+            const newAppt = {
+                id: refId,
+                format: selectedFormat,
+                name: name,
+                contact: contact,
+                notes: notes
+            };
+
+            appts.unshift(newAppt);
+            saveAppts();
+
+            document.getElementById('sumFormat').innerText = selectedFormat;
+            document.getElementById('sumContact').innerText = 'Student: ' + name + ' (' + contact + ')';
+            document.getElementById('sumRef').innerText = 'Ref #: ' + refId;
+
+            document.getElementById('apptForm').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('apptForm').reset();
+            document.getElementById('apptForm').style.display = 'block';
+            document.getElementById('successBox').style.display = 'none';
+        }
+
+        function showPublicView() {
+            document.getElementById('publicView').style.display = 'block';
+            document.getElementById('portalView').classList.remove('active');
+        }
+
+        function promptPortal() {
+            const pin = prompt('Enter Coach PIN (Default: 702):', '702');
+            if (pin === '702' || pin !== null) {
+                document.getElementById('publicView').style.display = 'none';
+                document.getElementById('portalView').classList.add('active');
+                renderPortalTable();
+            }
+        }
+
+        function renderPortalTable() {
+            const tbody = document.getElementById('portalTableBody');
+            tbody.innerHTML = '';
+            appts.forEach((a, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${a.id}</strong></td>
+                    <td>${a.name}</td>
+                    <td>${a.format}</td>
+                    <td>${a.contact}</td>
+                    <td>${a.notes}</td>
+                    <td><button class="call-btn" style="background: var(--card-border); padding: 4px 10px; font-size: 0.75rem;" onclick="removeAppt(${idx})">Remove</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function removeAppt(idx) {
+            appts.splice(idx, 1);
+            saveAppts();
+            renderPortalTable();
+        }
+    </script>
+</body>
+</html>
