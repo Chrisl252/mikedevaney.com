@@ -1,7 +1,7 @@
 /**
  * Mike DeVaney lesson booking backend, v1
- * Standalone Google Apps Script web app. Runs under bisketllc@gmail.com,
- * opens Mike's schedule sheet by ID, serves the schedule as JSON, and
+ * Standalone Google Apps Script web app. Runs under chrislucas252@gmail.com,
+ * opens the schedule sheet by ID, serves the schedule as JSON, and
  * accepts reservation requests that flip one status cell OPEN to PENDING.
  * Mike confirms by hand in the sheet: PENDING to BOOKED, or back to OPEN.
  *
@@ -17,7 +17,7 @@
 // Config
 // ---------------------------------------------------------------------------
 
-var SHEET_ID = 'PASTE_SHEET_ID_HERE';        // from the sheet URL once Mike shares edit access
+var SHEET_ID = '1G_8BXvug8iC2xSOm06QTTSszV0d9puc1jH3XOoW60Ss'; // "DeVaney - Lesson Schedule", owned by chrislucas252@gmail.com (created 2026-08-06)
 var SCHEDULE_SHEET_NAME = '';                 // '' = use the first sheet; pin by name once known
 var REQUESTS_SHEET_NAME = 'Requests';
 var MIKE_EMAIL = 'pba1817@gmail.com';         // matches contact email on mike-devaney.com; CONFIRM

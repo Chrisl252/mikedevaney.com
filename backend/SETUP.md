@@ -4,16 +4,25 @@ Google Apps Script web app that reads Mike's schedule sheet, serves it as JSON, 
 
 Roles: steps marked [MIKE] need Mike, everything else is [CHRIS].
 
-## A. Prerequisite
+## A. Prerequisite (DONE 2026-08-06, updated plan)
 
-1. [MIKE] Share the schedule Google Sheet with bisketllc@gmail.com as Editor (Share button, add the email, role Editor). The existing published CSV link stays as is; do not touch it.
-2. [CHRIS] Open the sheet from the Google Drive "Shared with me" view and confirm you can edit a cell (then undo). Copy the sheet ID from the URL: the long token between `/d/` and `/edit`.
+The sheet was recreated under Chris's account instead of waiting on Mike's share, so ownership
+is reversed from the original plan:
+
+1. DONE: "DeVaney - Lesson Schedule" lives in chrislucas252@gmail.com's Drive, an exact copy of
+   Mike's published layout. Sheet ID `1G_8BXvug8iC2xSOm06QTTSszV0d9puc1jH3XOoW60Ss` (already
+   set in Code.gs). URL:
+   https://docs.google.com/spreadsheets/d/1G_8BXvug8iC2xSOm06QTTSszV0d9puc1jH3XOoW60Ss/edit
+2. [CHRIS] Share it with pba1817@gmail.com as Editor so Mike manages his own schedule in OUR
+   copy from now on (his old sheet retires once he confirms).
+3. [CHRIS] File > Share > Publish to web > entire document as CSV; the published CSV URL
+   replaces SHEET_CSV in index.html at the same time BOOKING_API is set (one deploy, one purge).
 
 ## B. Create the script
 
 3. [CHRIS] Go to https://script.google.com > New project. Name it `mike-devaney-booking`. This is a standalone project in your Drive, not bound to the sheet, on purpose: redeploys never touch Mike's document.
 4. [CHRIS] Delete the stub code, paste the full contents of `backend/Code.gs`.
-5. [CHRIS] Set `SHEET_ID` at the top to the ID from step 2. Leave `SMS_GATEWAY` empty. Leave `SCHEDULE_SHEET_NAME` empty unless the schedule tab is not the first tab, in which case set its exact name.
+5. [CHRIS] `SHEET_ID` is already set in Code.gs (step A.1). Leave `SMS_GATEWAY` empty. Leave `SCHEDULE_SHEET_NAME` empty unless the schedule tab is not the first tab, in which case set its exact name.
 6. [CHRIS] Project Settings (gear icon) > check "Show appsscript.json manifest file". In the editor, set the manifest so the timezone and scopes are pinned:
 
 ```json
@@ -33,13 +42,13 @@ The timezone matters: the past-date filter uses Greenfield's today, not Vegas ti
 ## C. First run and eyeball check
 
 7. [CHRIS] In the editor, select the function `testScan` and Run. Grant the OAuth consent when prompted (spreadsheets + send mail, your account). Open Execution log: it prints every parsed slot as `date time [STATUS] RrowCcol`. Compare against the sheet by eye. Pay attention to the last date block of each month where the two month columns do not line up row-wise; the counts and statuses must match the sheet exactly.
-8. [CHRIS] In `testEmail`, temporarily change `MIKE_EMAIL` usage by editing the constant to bisketllc@gmail.com, run `testEmail`, confirm the mail arrives and reads right. Set `MIKE_EMAIL` back to pba1817@gmail.com, run `testEmail` once more, and confirm with Mike that he got it on his phone (Gmail app push is the real alert channel). This confirmation is mandatory before go-live: pba1817@gmail.com matches the contact email published on mike-devaney.com but has not been independently confirmed as the inbox Mike actually checks, and a wrong `MIKE_EMAIL` silently drops every booking alert.
+8. [CHRIS] In `testEmail`, temporarily change `MIKE_EMAIL` usage by editing the constant to chrislucas252@gmail.com, run `testEmail`, confirm the mail arrives and reads right. Set `MIKE_EMAIL` back to pba1817@gmail.com, run `testEmail` once more, and confirm with Mike that he got it on his phone (Gmail app push is the real alert channel). This confirmation is mandatory before go-live: pba1817@gmail.com matches the contact email published on mike-devaney.com but has not been independently confirmed as the inbox Mike actually checks, and a wrong `MIKE_EMAIL` silently drops every booking alert.
 
 ## D. Deploy
 
 9. [CHRIS] Deploy > New deployment > type: Web app.
    - Description: `v1`
-   - Execute as: **Me** (bisketllc@gmail.com)
+   - Execute as: **Me** (chrislucas252@gmail.com)
    - Who has access: **Anyone**  (NOT "Anyone with Google account"; that one serves an HTML login page to anonymous visitors and silently breaks the site)
 10. [CHRIS] Copy the Web app URL ending in `/exec`. This is the one URL the site will hold.
 
