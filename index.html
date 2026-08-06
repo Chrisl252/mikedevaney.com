@@ -1,650 +1,1269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DeVaney Bowling | Book a Lesson with Mike DeVaney</title>
-<meta name="description" content="Bowling lessons with Mike DeVaney, two-time PBA National Champion, at Strike Force Lanes in Greenfield, Indiana. See open times and book by text.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#faf8f4;
-  --cell:#fffdf9;
-  --ink:#1a1511;
-  --ink-soft:#6b6255;
-  --ink-faint:#a2988a;
-  --rule:#ddd5c6;
-  --rule-dark:#c9bfae;
-  --red:#b0261a;
-  --red-dark:#8a1c11;
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Source Sans 3",system-ui,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans)}
-a{color:var(--ink);text-decoration-color:var(--red);text-decoration-thickness:1px;text-underline-offset:3px}
-a:visited{color:var(--ink)}
-a:hover{color:var(--red)}
-:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:1px}
-.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
-.smallcaps{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeVaney Bowling — Mike DeVaney Consulting and Instruction</title>
+    <meta name="description" content="Book your bowling lesson today with PBA National Champion Mike DeVaney. Private lessons at Strike Force Lanes, Greenfield, IN — virtual lessons available. Text or call (702) 701-1494.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #14211a;
+            --bg-deep: #0f1a14;
+            --card-bg: rgba(23, 37, 29, 0.85);
+            --card-bg-solid: #17251d;
+            --card-border: rgba(201, 164, 92, 0.16);
+            --text-main: #f4efe3;
+            --text-sub: #b4c0ae;
+            --text-dim: #7f8d7a;
+            --gold: #c9a45c;
+            --gold-hover: #b8924a;
+            --gold-soft: rgba(201, 164, 92, 0.12);
+            --accent-green: #3fae60;
+            --accent-green-bg: rgba(63, 174, 96, 0.14);
+            --accent-red: #e05c5c;
+            --accent-red-bg: rgba(224, 92, 92, 0.12);
+            --radius-main: 14px;
+            --radius-btn: 8px;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --banner: url('https://a40048cd53614d0ac279.cdn6.editmysite.com/uploads/b/a40048cd53614d0ac27960484c1e5e2b4d510eb931c2438df3f9c9de8c9b62b2/2014%20snbt%20masters_1700168339.jpg?width=2400&optimize=medium');
+        }
 
-/* ---- top stripe + masthead ---- */
-.stripe{height:6px;background:var(--red)}
-.masthead{padding:20px 0 0;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:14px}
-.masthead .smallcaps{color:var(--ink)}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ---- hero ---- */
-.hero{padding:52px 0 56px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.kicker{color:var(--red);margin-bottom:14px}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,6vw,68px);line-height:1.02;letter-spacing:-.01em}
-.hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,24px);color:var(--ink-soft);margin-top:14px}
-.hero-say{margin-top:26px;font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.6vw,27px);line-height:1.25}
-.hero-meta{margin-top:22px;color:var(--ink-soft);font-size:16px;line-height:1.7}
-.hero-meta strong{color:var(--ink);font-weight:600}
-.hero-cta{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.btn{display:inline-block;background:var(--red);color:#fffdf9;font:700 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:17px 32px;text-decoration:none;border:none;cursor:pointer}
-.btn:visited{color:#fffdf9}
-.btn:hover{background:var(--red-dark);color:#fffdf9}
-.hero-phone{font-weight:600;font-size:18px;text-decoration:none}
-.photo{border:1px solid var(--ink);background:var(--cell);padding:10px 10px 12px}
-.photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;background:var(--rule)}
-.photo figcaption{margin-top:10px;display:flex;justify-content:space-between;color:var(--ink-soft);font-size:11px}
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-/* ---- section heads: ledger rules ---- */
-section{padding:56px 0}
-.sec-head{border-bottom:3px double var(--ink);padding-bottom:10px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.005em}
-.sec-note{color:var(--ink-soft);font-size:14px}
+        /* Faint full-page background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(15, 26, 20, 0.94), rgba(15, 26, 20, 0.97)), var(--banner) center 20% / cover no-repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-/* ---- calendar ---- */
-#schedule{padding-top:36px}
-.cal-tools{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0 20px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
-.cal-tools .where{color:var(--ink-soft);font-size:15px}
-.refresh{background:none;border:none;font:600 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--red);cursor:pointer;padding:4px 0;border-bottom:1px solid var(--red)}
-.refresh:hover{color:var(--red-dark);border-color:var(--red-dark)}
-.stamp{color:var(--ink-faint);font-size:13px}
-.cal-pager{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:30px 0 12px;flex-wrap:wrap}
-.cal-pager h3{font-family:var(--serif);font-weight:600;font-size:21px}
-.cal-pager h3 span{color:var(--ink-faint);font-family:var(--sans);font-weight:400;font-size:14px;margin-left:10px}
-.pagebtns{display:flex;gap:20px}
-.pagebtn{background:none;border:none;font:600 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--red);cursor:pointer;padding:4px 0;border-bottom:1px solid var(--red)}
-.pagebtn:hover{color:var(--red-dark);border-color:var(--red-dark)}
-.pagebtn:disabled{color:var(--ink-faint);border-color:var(--rule);cursor:default}
-.tblwrap{overflow-x:auto;border:1px solid var(--rule-dark);background:var(--cell)}
-table.cal{border-collapse:collapse;width:100%;min-width:640px}
-.cal th,.cal td{border:1px solid var(--rule);text-align:center;font-size:15px}
-.cal thead th{background:var(--paper);padding:10px 8px;font-weight:400}
-.cal thead .dow{display:block;font:700 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
-.cal thead .dnum{display:block;font-family:var(--serif);font-weight:600;font-size:18px;margin-top:2px}
-.cal tbody th{background:var(--paper);font:600 13px var(--sans);color:var(--ink-soft);padding:0 14px;white-space:nowrap}
-.cal td{padding:0;min-width:86px;height:46px}
-.slot{display:block;width:100%;height:100%;border:none;background:var(--cell);font:600 14px var(--sans);color:var(--ink)}
-button.slot{cursor:pointer}
-button.slot:hover{background:#f3ede1}
-.slot.booked{cursor:default}
-.slot[aria-pressed="true"]{background:var(--red);color:#fffdf9}
-.booked{color:var(--ink-faint);text-decoration:line-through;font-weight:400}
-.none{color:var(--rule-dark)}
-.cal-quiet{margin-top:22px;color:var(--ink-soft);font-size:15px}
-.cal-quiet a{white-space:nowrap}
-.cal-status{padding:36px 0;color:var(--ink-soft);font-size:15px}
-.cal-status a{color:var(--red)}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 26, 20, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+        }
 
-/* mobile agenda */
-.agenda{display:none}
-.aday{border-bottom:1px solid var(--rule);padding:16px 0}
-.aday-date{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.aday-date b{font-family:var(--serif);font-weight:600;font-size:18px}
-.aday-date span{font:700 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:600 14px var(--sans);padding:9px 14px;border:1px solid var(--ink);background:var(--cell);color:var(--ink);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fffdf9}
-.chip.booked{border-color:var(--rule);background:transparent;cursor:default}
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* booking bar */
-.bookbar{position:fixed;left:0;right:0;bottom:-120px;background:var(--cell);border-top:3px solid var(--red);box-shadow:0 -4px 18px rgba(26,21,17,.10);transition:bottom .22s ease;z-index:40;padding-bottom:env(safe-area-inset-bottom)}
-.bookbar.on{bottom:0}
-.bookbar .inner{max-width:1020px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.bookbar .sel{flex:1;min-width:180px}
-.bookbar .sel b{font-family:var(--serif);font-size:18px;font-weight:600}
-.bookbar .sel span{display:block;color:var(--ink-soft);font-size:13px}
-.bookbar .cancel{background:none;border:none;font:600 13px var(--sans);color:var(--ink-soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.bookbar .cancel:hover{color:var(--red)}
-body.has-bookbar{padding-bottom:150px}
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
 
-/* ---- credentials + scoresheet frames ---- */
-.frames{display:flex;border:2px solid var(--ink);background:var(--cell);margin:26px 0 10px}
-.frame{flex:1;position:relative;height:64px;border-right:1px solid var(--rule-dark)}
-.frame:last-child{border-right:none}
-.frame .fno{position:absolute;top:3px;left:5px;font:700 9px var(--sans);color:var(--ink-faint)}
-.frame .corner{position:absolute;top:0;right:0;width:44%;height:46%;border-left:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font:700 13px var(--sans)}
-.frame .year{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--serif);font-weight:600;font-size:14px}
-.frame.title .corner{color:var(--red)}
-.frame.title .year{color:var(--red)}
-.frames-cap{color:var(--ink-soft);font-size:13px;font-style:italic;font-family:var(--serif)}
-.ledger{margin-top:30px;list-style:none}
-.ledger li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:13px 2px;border-bottom:1px solid var(--rule)}
-.ledger .what{font-size:16px}
-.ledger .what small{display:block;color:var(--ink-soft);font-size:14px}
-.ledger .yr{font-family:var(--serif);font-weight:600;font-size:19px;white-space:nowrap}
-.ledger li.big .what{font-family:var(--serif);font-weight:600;font-size:19px}
-.ledger .what a,.statline a{text-decoration:none}
-.ledger .what a::after,.statline a::after{content:"\2197";font-size:.62em;vertical-align:super;margin-left:4px;color:var(--red)}
-.statline{margin-top:22px;font-size:16px;color:var(--ink-soft);line-height:1.7}
-.press-head{margin-top:44px;color:var(--ink-soft)}
-.ledger.press{margin-top:8px}
-.ledger.press .what{font-size:15px}
-.ledger.press .yr{font-size:17px;color:var(--ink-soft)}
-.brands{margin-top:24px;color:var(--ink-faint);font-size:13px}
+        .pba-badge {
+            font-family: var(--font-main);
+            font-size: 0.68rem;
+            font-weight: 700;
+            background: var(--gold-soft);
+            color: var(--gold);
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(201, 164, 92, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
 
-/* ---- lessons list ---- */
-.lessons{list-style:none;margin-top:26px;columns:2;column-gap:56px}
-.lessons li{break-inside:avoid;border-bottom:1px solid var(--rule);padding:12px 2px 12px 26px;position:relative;font-size:16px}
-.lessons li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:12px;border-radius:50%;border:2px solid var(--red)}
-.lessons-note{margin-top:20px;color:var(--ink-soft);font-size:15px}
+        .call-btn {
+            background: var(--gold);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.55rem 1.25rem;
+            border-radius: var(--radius-btn);
+            text-decoration: none;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
 
-/* ---- footer ---- */
-footer{border-top:3px double var(--ink);margin-top:20px;padding:40px 0 30px}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.foot-grid p{font-size:15px;color:var(--ink-soft);line-height:1.8}
-.foot-grid b{color:var(--ink);font-weight:600}
-.foot-links{list-style:none;font-size:15px;line-height:2}
-.portal-row{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);text-align:center}
-.portal-link{font-size:12px;color:var(--ink-faint);text-decoration:none;letter-spacing:.06em}
-.portal-link:visited{color:var(--ink-faint)}
-.portal-link:hover{color:var(--ink-soft);text-decoration:underline}
+        .call-btn:hover { background: var(--gold-hover); }
 
-/* ---- pin overlay ---- */
-.veil{position:fixed;inset:0;background:rgba(26,21,17,.45);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
-.veil.on{display:flex}
-.pinbox{background:var(--cell);border:1px solid var(--ink);padding:34px 34px 30px;max-width:330px;width:100%}
-.pinbox h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:6px}
-.pinbox p{color:var(--ink-soft);font-size:14px;margin-bottom:18px}
-.pinbox input{width:100%;font:600 26px var(--serif);letter-spacing:.5em;text-align:center;padding:10px 0 10px .5em;border:none;border-bottom:2px solid var(--ink);background:transparent;color:var(--ink)}
-.pinbox input:focus{outline:none;border-color:var(--red)}
-.pin-err{color:var(--red);font-size:13px;margin-top:10px;min-height:18px}
-.pin-actions{display:flex;gap:14px;margin-top:16px;align-items:center}
-.linky{background:none;border:none;font:600 13px var(--sans);color:var(--ink-soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.linky:hover{color:var(--red)}
+        .nav-portal {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
 
-/* ---- portal ---- */
-#portal{display:none}
-body.in-portal #site{display:none}
-body.in-portal #portal{display:block}
-.portal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0;border-bottom:3px double var(--ink);flex-wrap:wrap}
-.portal-head h2{font-family:var(--serif);font-weight:600;font-size:30px}
-.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:15px 30px}
-.btn.ghost:visited{color:var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--cell)}
-.portal-body{padding:34px 0 60px;max-width:720px}
-.portal-body h4{font-family:var(--serif);font-weight:600;font-size:20px;margin:30px 0 10px}
-.portal-body p{color:var(--ink-soft);font-size:16px;margin-bottom:10px}
-.portal-body ol{margin:10px 0 10px 22px;color:var(--ink-soft);font-size:16px}
-.portal-body ol li{padding:4px 0}
-.portal-body .foot-links{margin-top:6px}
-.portal-body .esc-hint{color:var(--ink-faint);font-size:13px;margin-bottom:4px}
-#portalSched .chip{cursor:default}
+        .nav-portal:hover { color: var(--text-main); }
 
-@media(max-width:840px){
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .photo{max-width:420px}
-  .lessons{columns:1}
-}
-@media(max-width:719px){
-  .tblwrap{display:none}
-  .agenda{display:block}
-  .hero{padding:38px 0 44px}
-  section{padding:44px 0}
-}
-</style>
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero banner — Mike at the 2014 SNBT Masters */
+        .hero {
+            text-align: center;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 5.5rem 1.5rem 5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(rgba(15, 26, 20, 0.55), rgba(20, 33, 26, 0.88) 70%, var(--bg) 100%), var(--banner) center 30% / cover no-repeat;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero-eyebrow {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.6rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.08;
+            margin-bottom: 1.1rem;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            max-width: 620px;
+            margin: 0 auto 1.4rem;
+        }
+
+        .hero-subtitle a { color: var(--gold); font-weight: 800; text-decoration: none; }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-sub);
+            background: rgba(15, 26, 20, 0.75);
+            border: 1px solid var(--card-border);
+            padding: 5px 16px;
+            border-radius: 20px;
+        }
+
+        .appointment-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            margin-bottom: 3.5rem;
+        }
+
+        .card-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-header p { color: var(--text-sub); font-size: 0.95rem; }
+
+        .cash-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--gold-soft);
+            color: var(--gold);
+            border: 1px solid rgba(201, 164, 92, 0.35);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-top: 0.75rem;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .service-box {
+            background: rgba(15, 26, 20, 0.6);
+            border: 2px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .service-box:hover { border-color: rgba(201, 164, 92, 0.4); }
+
+        .service-box.active {
+            border-color: var(--gold);
+            background: var(--gold-soft);
+        }
+
+        .service-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+        .service-meta { font-size: 0.8rem; color: var(--gold); font-weight: 600; }
+
+        .input-group { margin-bottom: 1.25rem; }
+
+        .input-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            display: block;
+            color: var(--text-main);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            background: rgba(15, 26, 20, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus { border-color: var(--gold); }
+
+        .input-field.flash {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(63, 174, 96, 0.25);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gold);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-btn);
+            padding: 1rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 0.5rem;
+            font-family: inherit;
+        }
+
+        .submit-btn:hover { background: var(--gold-hover); }
+        .submit-btn:active { transform: scale(0.99); }
+
+        .alt-contact {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-sub);
+            margin-top: 1.1rem;
+        }
+
+        .alt-contact a { color: var(--gold); font-weight: 700; text-decoration: none; }
+
+        .success-box { display: none; text-align: center; padding: 2rem 1rem; }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.25rem;
+        }
+
+        .summary-pill {
+            background: rgba(15, 26, 20, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.25rem;
+            max-width: 420px;
+            margin: 1.5rem auto;
+            text-align: left;
+        }
+
+        /* Private Lessons — Mike's list */
+        .lesson-list {
+            background: rgba(15, 26, 20, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.75rem;
+            max-width: 640px;
+            margin: 2rem auto 0;
+        }
+
+        .lesson-list h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            text-align: center;
+        }
+
+        .lesson-list ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.7rem 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .lesson-list li {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .lesson-list li::before { content: '•'; color: var(--text-sub); }
+
+        .lesson-list li.wide { grid-column: span 2; justify-content: center; }
+
+        /* Live Schedule */
+        .section-heading {
+            font-size: 1.35rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .schedule-wrap {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .schedule-venue {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 1.25rem;
+        }
+
+        .schedule-legend {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .sched-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .day-card {
+            background: rgba(15, 26, 20, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.1rem;
+        }
+
+        .day-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .slot-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+        .slot {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+
+        .slot.open {
+            background: var(--accent-green-bg);
+            color: var(--accent-green);
+            border-color: rgba(63, 174, 96, 0.35);
+            cursor: pointer;
+            transition: transform 0.15s, background 0.15s;
+        }
+
+        .slot.open:hover { transform: translateY(-2px); background: rgba(63, 174, 96, 0.28); }
+
+        .slot.booked {
+            background: var(--accent-red-bg);
+            color: var(--accent-red);
+            border-color: rgba(224, 92, 92, 0.25);
+            opacity: 0.75;
+        }
+
+        .sched-note {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            margin-top: 1.25rem;
+            text-align: right;
+        }
+
+        .sched-note a { color: var(--text-dim); }
+
+        .sched-fallback {
+            text-align: center;
+            color: var(--text-sub);
+            padding: 1.5rem 0;
+            display: none;
+        }
+
+        /* Verified Career Wins */
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .win-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.75rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .win-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(201, 164, 92, 0.5);
+        }
+
+        .win-trophy { font-size: 2rem; margin-bottom: 0.75rem; }
+
+        .win-year {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            border: 1px solid rgba(201, 164, 92, 0.4);
+            background: var(--gold-soft);
+            border-radius: 999px;
+            padding: 3px 12px;
+            margin-bottom: 0.85rem;
+        }
+
+        .win-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .win-sub { font-size: 0.9rem; color: var(--text-sub); line-height: 1.5; }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .stat-block {
+            background: rgba(15, 26, 20, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.4rem 1rem;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label { font-size: 0.78rem; color: var(--text-sub); line-height: 1.4; }
+
+        .highlight-list {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight-list h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-list ul { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+
+        .highlight-list li {
+            font-size: 0.92rem;
+            color: var(--text-sub);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .highlight-list li span.tick { color: var(--gold); font-weight: 700; }
+
+        /* Prior Brand Affiliations — from Mike's flyer */
+        .brands-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.75rem;
+            margin-bottom: 4rem;
+        }
+
+        .brands-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .brands-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+        .brand-chip {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(15, 26, 20, 0.7);
+            border: 1px solid rgba(201, 164, 92, 0.3);
+            border-radius: 8px;
+            padding: 6px 12px;
+        }
+
+        /* PIN Modal */
+        .pin-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 14, 10, 0.82);
+            backdrop-filter: blur(6px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .pin-overlay.active { display: flex; }
+
+        .pin-card {
+            background: var(--card-bg-solid);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pin-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 1.4rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .pin-close:hover { color: var(--text-main); }
+
+        .pin-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .pin-card p { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 1.5rem; }
+
+        .pin-input {
+            width: 100%;
+            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 0.6em;
+            padding: 0.8rem 0 0.8rem 0.6em;
+            background: rgba(15, 26, 20, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            color: var(--text-main);
+            font-family: inherit;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        .pin-input:focus { border-color: var(--gold); }
+
+        .pin-error {
+            display: none;
+            color: var(--accent-red);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .pin-cancel {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            font-size: 0.88rem;
+            cursor: pointer;
+            margin-top: 0.9rem;
+            font-family: inherit;
+        }
+
+        .pin-cancel:hover { color: var(--text-main); }
+
+        /* Coach Portal */
+        .portal-drawer { display: none; animation: fadeIn 0.25s ease; padding-top: 3rem; }
+        .portal-drawer.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+        .portal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        .portal-top h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; }
+
+        .portal-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .portal-action {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-main);
+            padding: 1.4rem;
+            text-decoration: none;
+            color: var(--text-main);
+            display: block;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .portal-action:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+        .portal-action .pa-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+        .portal-action .pa-title { font-weight: 800; font-size: 0.98rem; margin-bottom: 0.25rem; }
+        .portal-action .pa-sub { font-size: 0.8rem; color: var(--text-sub); }
+
+        .portal-note {
+            background: var(--gold-soft);
+            border: 1px solid rgba(201, 164, 92, 0.3);
+            border-radius: var(--radius-main);
+            padding: 1.25rem 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+
+        .portal-note strong { color: var(--text-main); }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--card-border);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer a { color: var(--gold); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.4rem; }
+            .hero { padding: 4rem 1.5rem 3.5rem; }
+            .service-options, .wins-grid, .portal-cards, .sched-grid, .lesson-list ul { grid-template-columns: 1fr; }
+            .lesson-list li.wide { grid-column: span 1; justify-content: flex-start; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .appointment-card { padding: 1.5rem; }
+            .schedule-wrap { padding: 1.25rem; }
+        }
+
+        @media (min-width: 769px) and (max-width: 980px) {
+            .sched-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
-<div class="stripe"></div>
 
-<div id="site">
-  <header class="wrap masthead">
-    <span class="smallcaps">DeVaney Bowling</span>
-  </header>
-
-  <div class="wrap hero">
-    <div class="hero-grid">
-      <div>
-        <p class="kicker smallcaps">Two-time PBA National Champion</p>
-        <h1>Mike DeVaney</h1>
-        <p class="hero-sub">Consulting and Instruction</p>
-        <p class="hero-say">"Book Your Bowling Lesson Today!"</p>
-        <p class="hero-meta">
-          Lessons at <strong>Strike Force Lanes</strong>, Greenfield, Indiana.<br>
-          Virtual lessons available.
-        </p>
-        <div class="hero-cta">
-          <a class="btn" id="heroBook" href="#">Book Now</a>
-          <a class="hero-phone" href="tel:+17027011494">(702) 701-1494</a>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                DeVaney Bowling <span class="pba-badge">PBA National Champion</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+                <button class="nav-portal" onclick="openPinModal()">Coach Portal</button>
+                <a href="tel:7027011494" class="call-btn">Call (702) 701-1494</a>
+            </div>
         </div>
-      </div>
-      <figure class="photo">
-        <img src="assets/banner_2014_snbt_masters.jpg" alt="Mike DeVaney at the 2014 SNBT Masters" onerror="this.closest('figure').style.display='none'">
-        <figcaption><span class="smallcaps">2014 SNBT Masters</span></figcaption>
-      </figure>
+    </header>
+
+    <main>
+        <div id="publicView">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-eyebrow">Mike DeVaney Consulting and Instruction</div>
+                <h1 class="hero-title">Book Your Bowling Lesson Today!</h1>
+                <p class="hero-subtitle">Text or call me to book today — <a href="tel:7027011494">702-701-1494</a></p>
+                <div class="hero-location">📍 Strike Force Lanes · Greenfield, IN &nbsp;|&nbsp; Virtual Lessons Available</div>
+            </div>
+
+            <!-- Booking -->
+            <div class="appointment-card" id="book">
+                <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Request a Lesson</h2>
+                    <p>Pick an open time below, fill in your info, and your request goes straight to Mike.</p>
+                    <div class="cash-pill">💵 Cash Only for In-Person Sessions</div>
+                </div>
+
+                <form id="apptForm" onsubmit="handleAppointment(event)">
+                    <div class="service-options">
+                        <div class="service-box active" onclick="pickFormat(this, 'In-Person — Strike Force Lanes, Greenfield, IN')">
+                            <div class="service-title">🎳 Private Lesson — In Person</div>
+                            <div class="service-meta">Strike Force Lanes · 1539 W Main St, Greenfield, IN</div>
+                        </div>
+                        <div class="service-box" onclick="pickFormat(this, 'Virtual Lesson')">
+                            <div class="service-title">💻 Virtual Lesson</div>
+                            <div class="service-meta">Virtual lessons available — anywhere</div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="pName">Your Name</label>
+                        <input class="input-field" type="text" id="pName" placeholder="Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="pContact">Phone or Email</label>
+                        <input class="input-field" type="text" id="pContact" placeholder="Best way to reach you" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="pWhen">Preferred Date &amp; Time</label>
+                        <input class="input-field" type="text" id="pWhen" placeholder="Tap a green OPEN slot below, or type a time" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="pNotes">Anything Mike should know? <span style="color: var(--text-dim); font-weight: 500;">(optional)</span></label>
+                        <input class="input-field" type="text" id="pNotes" placeholder="e.g. spare shooting, ball motion, tournament prep...">
+                    </div>
+
+                    <button type="submit" class="submit-btn">✉️ E-Mail to Book Now</button>
+                    <p class="alt-contact">Or text/call Mike directly: <a href="tel:7027011494">(702) 701-1494</a></p>
+                </form>
+
+                <div class="success-box" id="successBox">
+                    <div class="success-icon">✓</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">Almost done — hit Send!</h3>
+                    <p style="color: var(--text-sub); font-size: 0.95rem;">Your email app just opened with your request filled in.<br>Press <strong style="color: var(--text-main);">Send</strong> and Mike will confirm your time.</p>
+                    <div class="summary-pill">
+                        <div id="sumFormat" style="font-weight: 700; margin-bottom: 0.3rem;"></div>
+                        <div id="sumWhen" style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.3rem;"></div>
+                        <div id="sumContact" style="font-size: 0.9rem; color: var(--text-sub);"></div>
+                    </div>
+                    <p style="color: var(--text-sub); font-size: 0.88rem; margin-bottom: 1.25rem;">Email didn't open? Text Mike instead: <a href="sms:7027011494" style="color: var(--gold); font-weight: 700;">(702) 701-1494</a></p>
+                    <button class="call-btn" style="background: rgba(255,255,255,0.1);" onclick="resetForm()">← Make Another Request</button>
+                </div>
+
+                <!-- Private Lessons — Mike's own list -->
+                <div class="lesson-list">
+                    <h3>Private Lessons</h3>
+                    <ul>
+                        <li>Develop Core Fundamentals</li>
+                        <li>Learn Lane Play (Sport and Recreation)</li>
+                        <li>Grip Analysis</li>
+                        <li>Video Highlights Provided From Each Session</li>
+                        <li>Arsenal Advice</li>
+                        <li>Tournament Prep</li>
+                        <li>Oil Pattern Education</li>
+                        <li>Mental Game Development</li>
+                        <li class="wide">*Virtual Lessons Available*</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Live Availability -->
+            <div class="schedule-wrap" id="schedule">
+                <div class="section-heading" style="margin-bottom: 0.5rem;">
+                    <span>Availability</span>
+                    <button class="call-btn" style="background: rgba(255,255,255,0.1); font-size: 0.78rem; padding: 0.45rem 1rem;" onclick="loadSchedule(true)">↻ Refresh</button>
+                </div>
+                <div class="schedule-venue">Strike Force Lanes — 1539 W Main St, Greenfield, IN 46140</div>
+                <div class="schedule-legend">
+                    <span><span class="legend-dot" style="background: var(--accent-green);"></span>OPEN — tap to request it</span>
+                    <span><span class="legend-dot" style="background: var(--accent-red);"></span>BOOKED</span>
+                </div>
+
+                <div class="sched-grid" id="schedGrid"></div>
+
+                <div class="sched-fallback" id="schedFallback">
+                    Couldn't load the live schedule right now.<br><br>
+                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml" target="_blank" class="call-btn" style="background: rgba(255,255,255,0.1);">Click Here for Availability ↗</a>
+                </div>
+
+                <div class="sched-note">Schedule updates automatically · <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml" target="_blank">full schedule ↗</a></div>
+            </div>
+
+            <!-- Verified Career Wins & Achievements -->
+            <div class="section-heading">
+                <span>🏆 PBA National Champion — Verified Titles</span>
+                <a href="https://www.pba.com/players/mike-devaney" target="_blank" style="font-size: 0.85rem; font-weight: 500; font-family: var(--font-main); color: var(--text-sub); text-decoration: none;">Official PBA Career Stats &nearr;</a>
+            </div>
+
+            <div class="wins-grid">
+                <div class="win-card">
+                    <div class="win-trophy">🏆</div>
+                    <div class="win-year">2001 · TITLE No. 1</div>
+                    <div class="win-title">PBA Long Island Open Champion</div>
+                    <div class="win-sub">First career national title, captured on the PBA Tour — November 18, 2001.</div>
+                </div>
+
+                <div class="win-card">
+                    <div class="win-trophy">🏆</div>
+                    <div class="win-year">2009 · TITLE No. 2</div>
+                    <div class="win-title">PBA Scorpion Championship</div>
+                    <div class="win-sub">Won at the inaugural PBA World Series of Bowling — September 6, 2009.</div>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-block">
+                    <div class="stat-num">$661,230</div>
+                    <div class="stat-label">Career PBA Tour Earnings</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-num">17</div>
+                    <div class="stat-label">Championship-Round (TV) Appearances</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-num">183</div>
+                    <div class="stat-label">Career Cashes in 256 PBA Tour Events</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Seasons Competing on Tour (1995–2016)</div>
+                </div>
+            </div>
+
+            <div class="highlight-list">
+                <h3>More Career Highlights</h3>
+                <ul>
+                    <li><span class="tick">★</span> Runner-up, 2006 PBA West Virginia Championship — national TV stepladder finals</li>
+                    <li><span class="tick">★</span> USBC Masters stepladder finalist (2011) — one of bowling's four majors</li>
+                    <li><span class="tick">★</span> Led qualifying at the 2016 PBA Chameleon Championship (World Series of Bowling)</li>
+                    <li><span class="tick">★</span> Cashed in all 20 events entered in 2005 — a career-best $92,135 single-season haul</li>
+                </ul>
+            </div>
+
+            <!-- Prior Brand Affiliations — from Mike's flyer -->
+            <div class="brands-card">
+                <h3>Prior Brand Affiliations</h3>
+                <div class="brands-row">
+                    <span class="brand-chip">Storm Products Tour Manager / Head Coach</span>
+                    <span class="brand-chip">Storm / Roto-Grip</span>
+                    <span class="brand-chip">Radical</span>
+                    <span class="brand-chip">Brunswick</span>
+                    <span class="brand-chip">Vise Inserts</span>
+                    <span class="brand-chip">Logo Infusion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach Portal -->
+        <div id="portalView" class="portal-drawer">
+            <div class="portal-top">
+                <h2>🔒 Coach Portal</h2>
+                <div style="display: flex; gap: 0.75rem;">
+                    <button class="call-btn" style="background: rgba(255,255,255,0.1);" onclick="lockPortal()">Lock</button>
+                    <button class="call-btn" onclick="showPublicView()">← Back to Site</button>
+                </div>
+            </div>
+
+            <div class="portal-note">
+                <strong>How bookings work:</strong> students send requests by email to <strong>pba1817@gmail.com</strong> (or text you).
+                You confirm the time, then mark the slot <strong style="color: var(--accent-red);">BOOKED</strong> in your Google Sheet —
+                the site's public availability updates automatically from that sheet.
+            </div>
+
+            <div class="portal-cards">
+                <a class="portal-action" href="https://mail.google.com" target="_blank">
+                    <div class="pa-icon">📥</div>
+                    <div class="pa-title">Booking Requests ↗</div>
+                    <div class="pa-sub">Open Gmail — requests arrive at pba1817@gmail.com</div>
+                </a>
+                <a class="portal-action" href="https://docs.google.com/spreadsheets/u/0/?q=DeVaney%20Lesson%20Schedule" target="_blank">
+                    <div class="pa-icon">📝</div>
+                    <div class="pa-title">Edit Schedule ↗</div>
+                    <div class="pa-sub">Open your "DeVaney - Lesson Schedule" sheet to mark OPEN / BOOKED</div>
+                </a>
+                <a class="portal-action" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml" target="_blank">
+                    <div class="pa-icon">👀</div>
+                    <div class="pa-title">Public Schedule ↗</div>
+                    <div class="pa-sub">See the published schedule exactly as students see it</div>
+                </a>
+            </div>
+
+            <div class="schedule-wrap" style="margin-bottom: 0;">
+                <div class="section-heading" style="margin-bottom: 0.5rem;">
+                    <span>Current Schedule</span>
+                    <button class="call-btn" style="background: rgba(255,255,255,0.1); font-size: 0.78rem; padding: 0.45rem 1rem;" onclick="loadSchedule(true)">↻ Refresh</button>
+                </div>
+                <div class="schedule-legend" style="margin-top: 0.75rem;">
+                    <span><span class="legend-dot" style="background: var(--accent-green);"></span>OPEN</span>
+                    <span><span class="legend-dot" style="background: var(--accent-red);"></span>BOOKED</span>
+                </div>
+                <div class="sched-grid" id="portalSchedGrid"></div>
+                <div class="sched-fallback" id="portalSchedFallback">
+                    Couldn't load the schedule.
+                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml" target="_blank" style="color: var(--gold);">Open it directly ↗</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PIN Modal -->
+    <div class="pin-overlay" id="pinOverlay" onclick="if (event.target === this) closePinModal()">
+        <div class="pin-card">
+            <button class="pin-close" onclick="closePinModal()" aria-label="Close">×</button>
+            <h3>Coach Portal</h3>
+            <p>Enter your 4-digit PIN</p>
+            <input class="pin-input" id="pinInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off">
+            <div class="pin-error" id="pinError">Incorrect PIN — try again</div>
+            <button class="submit-btn" style="margin-top: 0;" onclick="submitPin()">Unlock</button>
+            <button class="pin-cancel" onclick="closePinModal()">Cancel — back to site</button>
+        </div>
     </div>
-  </div>
 
-  <section id="schedule" class="wrap">
-    <div class="sec-head">
-      <h2>The Lesson Schedule</h2>
-      <span class="sec-note">Tap an open time to book it by text</span>
-    </div>
-    <div class="cal-tools">
-      <span class="where">Strike Force Lanes, Greenfield, IN</span>
-      <span><span class="stamp" id="stamp"></span> &nbsp;<button class="refresh" id="refreshBtn" type="button">Refresh</button></span>
-    </div>
-    <div id="calStatus" class="cal-status">Loading the schedule...</div>
-    <div id="calGrid"></div>
-    <div id="calAgenda" class="agenda"></div>
-    <p class="cal-quiet">Don't see a time that works? Text Mike at <a href="sms:+17027011494">(702) 701-1494</a>.</p>
-  </section>
+    <footer>
+        <p style="margin-bottom: 0.4rem;"><strong style="color: var(--text-main); font-family: var(--font-display); font-size: 1rem;">DeVaney Bowling</strong> — Mike DeVaney Consulting and Instruction</p>
+        <p style="margin-bottom: 0.4rem;">Contact: Cell <a href="tel:7027011494">(702) 701-1494</a> · Facebook: <a href="https://www.facebook.com/mike.devaney.7" target="_blank">mike.devaney.7</a></p>
+        <p>&copy; 2026 DeVaney Bowling. Verified PBA Profile: <a href="https://www.pba.com/players/mike-devaney" target="_blank">PBA.com/players/mike-devaney</a></p>
+    </footer>
 
-  <section class="wrap" id="record">
-    <div class="sec-head">
-      <h2>The Record</h2>
-      <span class="sec-note">PBA Tour, 1995 to 2016</span>
-    </div>
-    <div class="frames" aria-hidden="true">
-      <div class="frame"><span class="fno">1</span><span class="corner"></span></div>
-      <div class="frame"><span class="fno">2</span><span class="corner"></span></div>
-      <div class="frame title"><span class="fno">3</span><span class="corner">X</span><span class="year">2001</span></div>
-      <div class="frame"><span class="fno">4</span><span class="corner"></span></div>
-      <div class="frame"><span class="fno">5</span><span class="corner"></span></div>
-      <div class="frame"><span class="fno">6</span><span class="corner"></span></div>
-      <div class="frame title"><span class="fno">7</span><span class="corner">X</span><span class="year">2009</span></div>
-      <div class="frame"><span class="fno">8</span><span class="corner"></span></div>
-      <div class="frame"><span class="fno">9</span><span class="corner"></span></div>
-      <div class="frame"><span class="fno">10</span><span class="corner"></span></div>
-    </div>
-    <p class="frames-cap">A Tour career, 1995 to 2016, scored across ten frames. The strikes are where the titles landed.</p>
-    <ul class="ledger">
-      <li class="big"><span class="what"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA Long Island Open</a><small>First national title</small></span><span class="yr">2001</span></li>
-      <li class="big"><span class="what"><a href="https://www.bowlingdigital.com/bowl/node/7450" rel="noopener">PBA Scorpion Championship</a><small>Won at the inaugural PBA World Series of Bowling</small></span><span class="yr">2009</span></li>
-      <li><span class="what"><a href="https://bowl.com/news/hess-wins-first-career-title-at-usbc-masters" rel="noopener">USBC Masters stepladder finalist</a></span><span class="yr">2011</span></li>
-      <li><span class="what"><a href="https://bowl.com/news/veteran-mike-devaney-rides-rollercoaster-into-pba-chameleon-championship-qualifying-lead" rel="noopener">Led qualifying, PBA Chameleon Championship</a></span><span class="yr">2016</span></li>
-    </ul>
-    <p class="statline"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">17 televised championship-round appearances across 256 PBA Tour events</a>. Now coaching at Strike Force Lanes in Greenfield.</p>
-    <p class="press-head smallcaps">Selected Coverage</p>
-    <ul class="ledger press">
-      <li><span class="what"><a href="https://www.bowlersmart.com/2022/02/12/2006-pba-west-virginia-championship-bowling-finals-featuring-rash-scroggins-devaney-healey-jr/" rel="noopener">Watch the PBA West Virginia Championship finals, DeVaney in the title match on ESPN</a><small>Archived ESPN broadcast</small></span><span class="yr">2006</span></li>
-      <li><span class="what"><a href="https://www.bowlingdigital.com/bowl/node/7450" rel="noopener">Victory in PBA Scorpion Championship revives DeVaney's career</a><small>Bowling Digital</small></span><span class="yr">2009</span></li>
-      <li><span class="what"><a href="https://californiabowlingnews.com/assets/070110.pdf" rel="noopener">Mike DeVaney wins PCB at Forest Lanes</a><small>California Bowling News</small></span><span class="yr">2010</span></li>
-      <li><span class="what"><a href="https://www.bowlersmart.com/2022/07/25/2011-bayer-usbc-masters-stepladder-finals/" rel="noopener">Watch the USBC Masters stepladder finals, DeVaney among the four TV finalists</a><small>Archived ESPN broadcast</small></span><span class="yr">2011</span></li>
-      <li><span class="what"><a href="https://bowl.com/news/veteran-mike-devaney-rides-rollercoaster-into-pba-chameleon-championship-qualifying-lead" rel="noopener">Veteran Mike DeVaney rides rollercoaster into Chameleon Championship qualifying lead</a><small>BOWL.com</small></span><span class="yr">2016</span></li>
-      <li><span class="what"><a href="https://bowl.com/news/coaching-tip-pba-champ-mike-devaney-on-lane-transition" rel="noopener">Coaching tip: PBA champ Mike DeVaney on reading lane transition</a><small>BOWL.com</small></span><span class="yr">2019</span></li>
-    </ul>
-    <p class="brands">Formerly Storm Products Tour Manager and Head Coach. Storm, Roto-Grip, Radical, Brunswick, Vise Inserts, Logo Infusion.</p>
-  </section>
+    <script>
+        // ===== Booking =====
+        var selectedFormat = 'In-Person — Strike Force Lanes, Greenfield, IN';
+        var COACH_EMAIL = 'pba1817@gmail.com';
 
-  <section class="wrap" id="lessons">
-    <div class="sec-head">
-      <h2>Private Lessons</h2>
-      <span class="sec-note">One on one, on the lanes or virtual</span>
-    </div>
-    <ul class="lessons">
-      <li>Develop Core Fundamentals</li>
-      <li>Learn Lane Play (Sport and Recreation)</li>
-      <li>Grip Analysis</li>
-      <li>Video Highlights Provided From Each Session</li>
-      <li>Arsenal Advice</li>
-      <li>Tournament Prep</li>
-      <li>Oil Pattern Education</li>
-      <li>Mental Game Development</li>
-      <li>Virtual Lessons Available</li>
-    </ul>
-    <p class="lessons-note">Pick an open time above, or text Mike at <a href="sms:+17027011494">(702) 701-1494</a> to set something up.</p>
-  </section>
-
-  <footer class="wrap">
-    <div class="foot-grid">
-      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting and Instruction</p>
-      <p><b>Strike Force Lanes</b><br>1539 W Main St<br>Greenfield, IN 46140</p>
-      <ul class="foot-links">
-        <li><a href="tel:+17027011494">(702) 701-1494</a></li>
-        <li><a href="mailto:pba1817@gmail.com">pba1817@gmail.com</a></li>
-        <li><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA player profile</a></li>
-        <li><a href="https://www.facebook.com/mike.devaney.7" rel="noopener">Facebook</a></li>
-      </ul>
-    </div>
-    <div class="portal-row">
-      <a href="#" class="portal-link" id="portalLink">Coach Portal</a>
-    </div>
-  </footer>
-</div>
-
-<div class="bookbar" id="bookbar">
-  <div class="inner">
-    <div class="sel"><b id="bbWhen"></b><span>Strike Force Lanes, Greenfield, IN</span></div>
-    <a class="btn" id="bbLink" href="#">Book This Time</a>
-    <button class="cancel" id="bbCancel" type="button">Cancel</button>
-  </div>
-</div>
-
-<div class="veil" id="pinVeil" role="dialog" aria-modal="true" aria-label="Coach Portal PIN">
-  <form class="pinbox" id="pinForm">
-    <h3>Coach Portal</h3>
-    <p>This area is for Mike. Enter the 4-digit PIN.</p>
-    <input id="pinInput" inputmode="numeric" autocomplete="off" maxlength="4" aria-label="PIN">
-    <div class="pin-err" id="pinErr"></div>
-    <div class="pin-actions">
-      <button class="btn" type="submit">Enter</button>
-      <button class="linky" type="button" id="pinBack">Back to site</button>
-    </div>
-  </form>
-</div>
-
-<div id="portal">
-  <div class="stripe"></div>
-  <div class="wrap portal-head">
-    <h2>Coach Portal</h2>
-    <a href="#" class="btn ghost" id="portalBack">Back to Site</a>
-  </div>
-  <div class="wrap portal-body">
-    <p class="esc-hint">Press Esc anytime to go back to the site.</p>
-    <h4>How bookings work</h4>
-    <ol>
-      <li>A student taps an open time on the site and it opens a text to you with the date and time filled in.</li>
-      <li>You reply to confirm the lesson.</li>
-      <li>Open the schedule sheet and change that slot from OPEN to BOOKED. The site picks it up on its own.</li>
-    </ol>
-    <ul class="foot-links">
-      <li><a href="https://docs.google.com/spreadsheets/u/0/?q=DeVaney%20Lesson%20Schedule" rel="noopener">Edit the schedule sheet</a></li>
-      <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml" rel="noopener">View the published schedule</a></li>
-    </ul>
-    <h4>Current schedule</h4>
-    <p id="portalStatus"></p>
-    <div id="portalSched"></div>
-    <p style="margin-top:34px"><button class="btn" id="lockBtn" type="button">Lock Portal</button></p>
-  </div>
-</div>
-
-<script>
-(function(){
-  "use strict";
-  var SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pub?output=csv";
-  var SHEET_HTML = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml";
-  var PHONE = "+17027011494";
-  var PIN_HASH = "MjE0Mw==";
-  var PIN_KEY = "dvb_coach";
-
-  function smsHref(body){ return "sms:" + PHONE + "?&body=" + encodeURIComponent(body); }
-  document.getElementById("heroBook").href = smsHref("Hi Mike, I'd like to book a bowling lesson. My name is ");
-
-  /* ---- CSV parsing (adapted from the prior site) ---- */
-  function parseCSV(text){
-    var rows=[],row=[],cur="",inQ=false;
-    for(var i=0;i<text.length;i++){
-      var ch=text[i];
-      if(inQ){
-        if(ch==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else {inQ=false;} }
-        else cur+=ch;
-      }else{
-        if(ch==='"') inQ=true;
-        else if(ch===",") {row.push(cur);cur="";}
-        else if(ch==="\n"){row.push(cur);rows.push(row);row=[];cur="";}
-        else if(ch!=="\r") cur+=ch;
-      }
-    }
-    if(cur.length||row.length){row.push(cur);rows.push(row);}
-    return rows;
-  }
-  var DATE_RE=/^[A-Za-z]{3,9}\.?\s\d{1,2},\s\d{4}$/;
-  var TIME_RE=/^\d{1,2}:\d{2}\s?(AM|PM)$/i;
-  var STATUS_RE=/(OPEN|BOOKED)/i;
-  function extractDays(rows){
-    var days={},maxCols=0;
-    rows.forEach(function(r){ if(r.length>maxCols) maxCols=r.length; });
-    for(var c=0;c<maxCols;c++){
-      var currentDate=null;
-      for(var r=0;r<rows.length;r++){
-        var cell=(rows[r][c]||"").trim();
-        if(!cell) continue;
-        if(DATE_RE.test(cell)){ currentDate=cell; if(!days[currentDate]) days[currentDate]=[]; }
-        else if(TIME_RE.test(cell)&&currentDate){
-          var status=(rows[r][c+1]||"").trim();
-          var m=status.match(STATUS_RE);
-          if(m) days[currentDate].push({time:cell.toUpperCase(),open:m[1].toUpperCase()==="OPEN"});
+        function pickFormat(element, formatTitle) {
+            document.querySelectorAll('.service-box').forEach(function (box) { box.classList.remove('active'); });
+            element.classList.add('active');
+            selectedFormat = formatTitle;
         }
-      }
-    }
-    var list=Object.keys(days).map(function(d){ return {date:d,ts:Date.parse(d),slots:days[d]}; })
-      .filter(function(d){ return d.slots.length&&!isNaN(d.ts); });
-    var today=new Date(); today.setHours(0,0,0,0);
-    list=list.filter(function(d){ return d.ts>=today.getTime(); });
-    list.sort(function(a,b){ return a.ts-b.ts; });
-    return list;
-  }
 
-  /* ---- helpers ---- */
-  function shortDate(d){ return d.replace(/,\s*\d{4}$/,""); }
-  function dow(ts){ return new Date(ts).toLocaleDateString("en-US",{weekday:"short"}); }
-  function fmtShort(ts){ return new Date(ts).toLocaleDateString("en-US",{month:"short",day:"numeric"}); }
-  function timeVal(t){
-    var m=t.match(/(\d{1,2}):(\d{2})\s?(AM|PM)/i);
-    var h=parseInt(m[1],10)%12; if(m[3].toUpperCase()==="PM") h+=12;
-    return h*60+parseInt(m[2],10);
-  }
+        function handleAppointment(e) {
+            e.preventDefault();
+            var name = document.getElementById('pName').value.trim();
+            var contact = document.getElementById('pContact').value.trim();
+            var when = document.getElementById('pWhen').value.trim();
+            var notes = document.getElementById('pNotes').value.trim() || 'None';
 
-  /* ---- selection + booking bar ---- */
-  var sel=null;
-  var bookbar=document.getElementById("bookbar");
-  function clearSel(){
-    sel=null;
-    document.querySelectorAll('[aria-pressed="true"]').forEach(function(el){ el.setAttribute("aria-pressed","false"); });
-    bookbar.classList.remove("on");
-    document.body.classList.remove("has-bookbar");
-  }
-  function markSel(){
-    if(!sel) return;
-    document.querySelectorAll('.slot,.chip').forEach(function(el){
-      if(el.dataset.date===sel.date&&el.dataset.time===sel.time&&!el.classList.contains("booked"))
-        el.setAttribute("aria-pressed","true");
-    });
-  }
-  function pickSlot(btn){
-    var same=sel&&sel.date===btn.dataset.date&&sel.time===btn.dataset.time;
-    clearSel();
-    if(same) return;
-    sel={date:btn.dataset.date,time:btn.dataset.time};
-    markSel();
-    var when=shortDate(sel.date)+" at "+sel.time;
-    document.getElementById("bbWhen").textContent=when;
-    document.getElementById("bbLink").href=smsHref("Hi Mike, I'd like to book a lesson on "+when+". My name is ");
-    bookbar.classList.add("on");
-    document.body.classList.add("has-bookbar");
-  }
-  document.getElementById("bbCancel").addEventListener("click",clearSel);
+            var subject = 'Bowling Lesson Booking Request — ' + name;
+            var body =
+                'Hi Mike, I\'d like to book a bowling lesson!\n\n' +
+                'Lesson type: ' + selectedFormat + '\n' +
+                'Preferred date & time: ' + when + '\n' +
+                'Name: ' + name + '\n' +
+                'Contact: ' + contact + '\n' +
+                'Notes: ' + notes + '\n';
 
-  function slotButton(day,s,tag){
-    var el=document.createElement(s.open?"button":"span");
-    el.className=tag+(s.open?"":" booked");
-    el.textContent=(tag==="chip")?s.time:(s.open?"Open":"Booked");
-    if(s.open){
-      el.type="button";
-      el.dataset.date=day.date; el.dataset.time=s.time;
-      el.setAttribute("aria-pressed","false");
-      el.setAttribute("aria-label","Book "+shortDate(day.date)+" at "+s.time);
-      el.addEventListener("click",function(){ pickSlot(el); });
-    }
-    return el;
-  }
+            window.location.href = 'mailto:' + COACH_EMAIL +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(body);
 
-  /* ---- rendering: paged 5-day week view ---- */
-  var PAGE_SIZE=5, page=0, dayList=[];
-  function renderGrid(){
-    var host=document.getElementById("calGrid");
-    host.innerHTML="";
-    if(!dayList.length) return;
-    var pages=Math.ceil(dayList.length/PAGE_SIZE);
-    if(page>pages-1) page=pages-1;
-    if(page<0) page=0;
-    var days=dayList.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
-    var last=days[days.length-1];
-    var label=(days.length===1?fmtShort(days[0].ts):fmtShort(days[0].ts)+" to "+fmtShort(last.ts))+", "+new Date(last.ts).getFullYear();
-
-    var bar=document.createElement("div"); bar.className="cal-pager";
-    var h=document.createElement("h3");
-    h.innerHTML=label+' <span>'+dayList.length+' lesson days posted</span>';
-    var btns=document.createElement("div"); btns.className="pagebtns";
-    var earlier=document.createElement("button");
-    earlier.type="button"; earlier.className="pagebtn"; earlier.textContent="Earlier";
-    earlier.disabled=(page===0);
-    earlier.addEventListener("click",function(){ page--; renderGrid(); });
-    var later=document.createElement("button");
-    later.type="button"; later.className="pagebtn"; later.textContent="Later";
-    later.disabled=(page>=pages-1);
-    later.addEventListener("click",function(){ page++; renderGrid(); });
-    btns.appendChild(earlier); btns.appendChild(later);
-    bar.appendChild(h); bar.appendChild(btns);
-    host.appendChild(bar);
-
-    var times={};
-    days.forEach(function(d){ d.slots.forEach(function(s){ times[s.time]=true; }); });
-    var timeList=Object.keys(times).sort(function(a,b){ return timeVal(a)-timeVal(b); });
-    var wrap=document.createElement("div"); wrap.className="tblwrap";
-    var tbl=document.createElement("table"); tbl.className="cal";
-    var thead=document.createElement("thead"),hr=document.createElement("tr");
-    hr.appendChild(document.createElement("th"));
-    days.forEach(function(d){
-      var th=document.createElement("th");
-      th.innerHTML='<span class="dow">'+dow(d.ts)+'</span><span class="dnum">'+shortDate(d.date)+'</span>';
-      hr.appendChild(th);
-    });
-    thead.appendChild(hr); tbl.appendChild(thead);
-    var tbody=document.createElement("tbody");
-    timeList.forEach(function(t){
-      var tr=document.createElement("tr");
-      var th=document.createElement("th"); th.scope="row"; th.textContent=t; tr.appendChild(th);
-      days.forEach(function(d){
-        var td=document.createElement("td");
-        var s=null;
-        d.slots.forEach(function(x){ if(x.time===t) s=x; });
-        if(s) td.appendChild(slotButton(d,s,"slot"));
-        else { td.innerHTML='<span class="none" aria-hidden="true">&middot;</span>'; }
-        tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
-    });
-    tbl.appendChild(tbody); wrap.appendChild(tbl); host.appendChild(wrap);
-    markSel();
-  }
-  function renderAgenda(list,hostId,interactive){
-    var host=document.getElementById(hostId);
-    host.innerHTML="";
-    list.forEach(function(day){
-      var d=document.createElement("div"); d.className="aday";
-      var head=document.createElement("div"); head.className="aday-date";
-      head.innerHTML="<b>"+day.date+"</b><span>"+new Date(day.ts).toLocaleDateString("en-US",{weekday:"long"})+"</span>";
-      d.appendChild(head);
-      var chips=document.createElement("div"); chips.className="chips";
-      day.slots.forEach(function(s){
-        if(interactive) chips.appendChild(slotButton(day,s,"chip"));
-        else{
-          var el=document.createElement("span");
-          el.className="chip"+(s.open?"":" booked");
-          el.textContent=s.time;
-          chips.appendChild(el);
+            document.getElementById('sumFormat').innerText = selectedFormat;
+            document.getElementById('sumWhen').innerText = 'Requested time: ' + when;
+            document.getElementById('sumContact').innerText = name + ' · ' + contact;
+            document.getElementById('apptForm').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
         }
-      });
-      d.appendChild(chips); host.appendChild(d);
-    });
-  }
 
-  /* ---- load ---- */
-  function loadSchedule(force){
-    var status=document.getElementById("calStatus");
-    var grid=document.getElementById("calGrid");
-    var agenda=document.getElementById("calAgenda");
-    status.style.display="block";
-    status.textContent="Loading the schedule...";
-    fetch(SHEET_CSV+"&cb="+Date.now(),{cache:force?"no-store":"default"})
-      .then(function(res){ if(!res.ok) throw new Error("HTTP "+res.status); return res.text(); })
-      .then(function(text){
-        var list=extractDays(parseCSV(text));
-        clearSel();
-        dayList=list; page=0;
-        document.getElementById("stamp").textContent="Updated "+new Date().toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});
-        if(!list.length){
-          grid.innerHTML=""; agenda.innerHTML="";
-          document.getElementById("portalSched").innerHTML="";
-          status.innerHTML='No upcoming times are posted yet. Text Mike at <a href="sms:+17027011494">(702) 701-1494</a>.';
-          document.getElementById("portalStatus").textContent="No upcoming times are posted in the sheet yet.";
-          return;
+        function resetForm() {
+            document.getElementById('apptForm').reset();
+            document.querySelectorAll('.service-box').forEach(function (box, i) { box.classList.toggle('active', i === 0); });
+            selectedFormat = 'In-Person — Strike Force Lanes, Greenfield, IN';
+            document.getElementById('apptForm').style.display = 'block';
+            document.getElementById('successBox').style.display = 'none';
         }
-        status.style.display="none";
-        renderGrid();
-        renderAgenda(list,"calAgenda",true);
-        renderAgenda(list,"portalSched",false);
-        document.getElementById("portalStatus").textContent="Read only. Edit the sheet to change it.";
-      })
-      .catch(function(){
-        var stale=grid.childNodes.length>0||agenda.childNodes.length>0;
-        status.innerHTML='Schedule unavailable right now. Text Mike at <a href="sms:+17027011494">(702) 701-1494</a>. You can also <a href="'+SHEET_HTML+'" rel="noopener">view the published sheet</a>, or try Refresh.'
-          +(stale?' Below is the last loaded copy of the schedule.':'');
-        document.getElementById("portalStatus").innerHTML='Schedule unavailable right now. <a href="'+SHEET_HTML+'" rel="noopener">Open the published sheet</a>.';
-      });
-  }
-  document.getElementById("refreshBtn").addEventListener("click",function(){ loadSchedule(true); });
-  loadSchedule(false);
 
-  /* ---- coach portal gate ---- */
-  var veil=document.getElementById("pinVeil");
-  var pinInput=document.getElementById("pinInput");
-  function openPortal(){
-    veil.classList.remove("on");
-    document.body.classList.add("in-portal");
-    clearSel();
-    window.scrollTo(0,0);
-  }
-  function closePortal(){
-    document.body.classList.remove("in-portal");
-    window.scrollTo(0,0);
-  }
-  document.getElementById("portalLink").addEventListener("click",function(e){
-    e.preventDefault();
-    if(sessionStorage.getItem(PIN_KEY)===PIN_HASH){ openPortal(); return; }
-    document.getElementById("pinErr").textContent="";
-    pinInput.value="";
-    veil.classList.add("on");
-    pinInput.focus();
-  });
-  document.getElementById("pinForm").addEventListener("submit",function(e){
-    e.preventDefault();
-    var v=pinInput.value.trim();
-    if(/^\d{4}$/.test(v)&&btoa(v)===PIN_HASH){
-      sessionStorage.setItem(PIN_KEY,PIN_HASH);
-      openPortal();
-    }else{
-      document.getElementById("pinErr").textContent="That is not the right PIN.";
-      pinInput.value=""; pinInput.focus();
-    }
-  });
-  document.getElementById("pinBack").addEventListener("click",function(){ veil.classList.remove("on"); });
-  veil.addEventListener("click",function(e){ if(e.target===veil) veil.classList.remove("on"); });
-  document.getElementById("portalBack").addEventListener("click",function(e){ e.preventDefault(); closePortal(); });
-  document.getElementById("lockBtn").addEventListener("click",function(){
-    sessionStorage.removeItem(PIN_KEY);
-    closePortal();
-  });
-  document.addEventListener("keydown",function(e){
-    if(e.key!=="Escape") return;
-    if(veil.classList.contains("on")) veil.classList.remove("on");
-    else if(document.body.classList.contains("in-portal")) closePortal();
-    else clearSel();
-  });
-})();
-</script>
+        // ===== Live schedule from the published Google Sheet =====
+        var SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pub?output=csv';
+
+        function parseCSV(text) {
+            var rows = [], row = [], cur = '', inQ = false;
+            for (var i = 0; i < text.length; i++) {
+                var ch = text[i];
+                if (inQ) {
+                    if (ch === '"') {
+                        if (text[i + 1] === '"') { cur += '"'; i++; }
+                        else { inQ = false; }
+                    } else { cur += ch; }
+                } else {
+                    if (ch === '"') { inQ = true; }
+                    else if (ch === ',') { row.push(cur); cur = ''; }
+                    else if (ch === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
+                    else if (ch !== '\r') { cur += ch; }
+                }
+            }
+            if (cur.length || row.length) { row.push(cur); rows.push(row); }
+            return rows;
+        }
+
+        var DATE_RE = /^[A-Za-z]{3,9}\.?\s\d{1,2},\s\d{4}$/;
+        var TIME_RE = /^\d{1,2}:\d{2}\s?(AM|PM)$/i;
+        var STATUS_RE = /(OPEN|BOOKED)/i;
+
+        function extractDays(rows) {
+            var days = {};
+            var maxCols = 0;
+            rows.forEach(function (r) { if (r.length > maxCols) maxCols = r.length; });
+
+            for (var c = 0; c < maxCols; c++) {
+                var currentDate = null;
+                for (var r = 0; r < rows.length; r++) {
+                    var cell = (rows[r][c] || '').trim();
+                    if (!cell) continue;
+                    if (DATE_RE.test(cell)) {
+                        currentDate = cell;
+                        if (!days[currentDate]) days[currentDate] = [];
+                    } else if (TIME_RE.test(cell) && currentDate) {
+                        var status = (rows[r][c + 1] || '').trim();
+                        var m = status.match(STATUS_RE);
+                        if (m) {
+                            days[currentDate].push({ time: cell.toUpperCase(), open: m[1].toUpperCase() === 'OPEN' });
+                        }
+                    }
+                }
+            }
+
+            var list = Object.keys(days).map(function (d) {
+                return { date: d, ts: Date.parse(d), slots: days[d] };
+            }).filter(function (d) { return d.slots.length && !isNaN(d.ts); });
+
+            var today = new Date(); today.setHours(0, 0, 0, 0);
+            list = list.filter(function (d) { return d.ts >= today.getTime(); });
+            list.sort(function (a, b) { return a.ts - b.ts; });
+            return list;
+        }
+
+        function renderSchedule(list) {
+            ['schedGrid', 'portalSchedGrid'].forEach(function (gridId) {
+                var grid = document.getElementById(gridId);
+                if (!grid) return;
+                grid.innerHTML = '';
+                list.forEach(function (day) {
+                    var card = document.createElement('div');
+                    card.className = 'day-card';
+                    var title = document.createElement('div');
+                    title.className = 'day-title';
+                    title.textContent = day.date;
+                    card.appendChild(title);
+                    var rowEl = document.createElement('div');
+                    rowEl.className = 'slot-row';
+                    day.slots.forEach(function (s) {
+                        var el = document.createElement(s.open ? 'button' : 'span');
+                        el.className = 'slot ' + (s.open ? 'open' : 'booked');
+                        el.textContent = s.time;
+                        if (s.open) {
+                            el.type = 'button';
+                            el.title = 'Request ' + day.date + ' at ' + s.time;
+                            el.style.fontFamily = 'inherit';
+                            el.onclick = function () { requestSlot(day.date, s.time); };
+                        }
+                        rowEl.appendChild(el);
+                    });
+                    card.appendChild(rowEl);
+                    grid.appendChild(card);
+                });
+            });
+        }
+
+        function scheduleError() {
+            ['schedFallback', 'portalSchedFallback'].forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) el.style.display = 'block';
+            });
+        }
+
+        function loadSchedule(force) {
+            var url = SHEET_CSV + '&cb=' + Date.now();
+            fetch(url, { cache: force ? 'no-store' : 'default' })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.text();
+                })
+                .then(function (text) {
+                    var list = extractDays(parseCSV(text));
+                    if (!list.length) { scheduleError(); return; }
+                    ['schedFallback', 'portalSchedFallback'].forEach(function (id) {
+                        var el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    });
+                    renderSchedule(list);
+                })
+                .catch(function () { scheduleError(); });
+        }
+
+        function requestSlot(date, time) {
+            var boxes = document.querySelectorAll('.service-box');
+            if (boxes.length) { pickFormat(boxes[0], 'In-Person — Strike Force Lanes, Greenfield, IN'); }
+            var whenField = document.getElementById('pWhen');
+            whenField.value = date + ' at ' + time;
+            resetFormVisibility();
+            document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+            whenField.classList.add('flash');
+            setTimeout(function () { whenField.classList.remove('flash'); }, 1800);
+            var nameField = document.getElementById('pName');
+            setTimeout(function () { if (!nameField.value) nameField.focus({ preventScroll: true }); }, 600);
+        }
+
+        function resetFormVisibility() {
+            document.getElementById('apptForm').style.display = 'block';
+            document.getElementById('successBox').style.display = 'none';
+        }
+
+        // ===== Coach Portal (PIN) =====
+        var PIN_HASH = 'MjE0Mw==';
+
+        function openPinModal() {
+            if (sessionStorage.getItem('md_coach') === '1') { showPortal(); return; }
+            document.getElementById('pinError').style.display = 'none';
+            document.getElementById('pinInput').value = '';
+            document.getElementById('pinOverlay').classList.add('active');
+            setTimeout(function () { document.getElementById('pinInput').focus(); }, 50);
+        }
+
+        function closePinModal() {
+            document.getElementById('pinOverlay').classList.remove('active');
+        }
+
+        function submitPin() {
+            var val = document.getElementById('pinInput').value.trim();
+            if (btoa(val) === PIN_HASH) {
+                sessionStorage.setItem('md_coach', '1');
+                closePinModal();
+                showPortal();
+            } else {
+                document.getElementById('pinError').style.display = 'block';
+                document.getElementById('pinInput').value = '';
+                document.getElementById('pinInput').focus();
+            }
+        }
+
+        document.getElementById('pinInput').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') { e.preventDefault(); submitPin(); }
+            if (e.key === 'Escape') { closePinModal(); }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                if (document.getElementById('pinOverlay').classList.contains('active')) closePinModal();
+            }
+        });
+
+        function showPortal() {
+            document.getElementById('publicView').style.display = 'none';
+            document.getElementById('portalView').classList.add('active');
+            window.scrollTo({ top: 0 });
+        }
+
+        function showPublicView() {
+            document.getElementById('portalView').classList.remove('active');
+            document.getElementById('publicView').style.display = 'block';
+            window.scrollTo({ top: 0 });
+        }
+
+        function lockPortal() {
+            sessionStorage.removeItem('md_coach');
+            showPublicView();
+        }
+
+        // ===== Init =====
+        loadSchedule(false);
+    </script>
 </body>
 </html>
