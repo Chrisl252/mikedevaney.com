@@ -1,5 +1,21 @@
 # DECISIONS_LOG — mikedevaney.com
 
+## 2026-08-06 — GBP playbook claim verification sweep
+- **Verified against linked sources** (2026-08-06): PBA.com player page confirms 256 events,
+  183 cashes, 17 championship-round TV appearances, on tour 1995-2016; PBA all-time titlists
+  list confirms Long Island Open won 11/18/2001; Bowling Digital confirms the 2009 Scorpion
+  Championship (his second title, at the first World Series of Bowling). These stats stay in
+  the GBP description/captions/posts as written.
+- **Hedged as unconfirmed in GBP-PLAYBOOK.md** (no source beyond the site's own copy or none
+  at all): Storm Products tour manager / head coach role (self-reported on mike-devaney.com;
+  Mike must confirm before filing), USBC coach credential, devaney-bowling.square.site
+  existence/staleness (now verify-then-act with Mike's OK, not kill-on-sight), the Facebook
+  page name "Mike DeVaney Bowling Instruction and Consultation", the Turbo coaches page.
+- **Email**: pba1817@gmail.com matches the published contact email on mike-devaney.com but is
+  flagged in GBP-PLAYBOOK.md, backend/SETUP.md, and backend/Code.gs as requiring Mike's live
+  confirmation (SETUP step 8 delivery test) before go-live - it is the hardcoded booking-alert
+  destination.
+
 ## 2026-08-06 — Calendar-first redesign + deploy path rebuilt
 - **Design**: replaced the email-form page with a calendar-first single page. Booking is SMS
   (`sms:+17027011494?&body=` prefilled from the tapped slot); the email form is gone; email

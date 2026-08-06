@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DeVaney Bowling | Book a Lesson with Mike DeVaney</title>
-<meta name="description" content="Bowling lessons with Mike DeVaney, two-time PBA National Champion, at Strike Force Lanes in Greenfield, Indiana. See open times and book by text.">
+<title>Bowling Lessons in Greenfield IN | PBA Champion Mike DeVaney</title>
+<meta name="description" content="Learn from a 2-time PBA Tour champion. Private bowling lessons at Strike Force Lanes in Greenfield IN plus virtual coaching anywhere. Book your lesson by text.">
+<link rel="canonical" href="https://mike-devaney.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mike-devaney.com/">
+<meta property="og:site_name" content="DeVaney Bowling">
+<meta property="og:title" content="Bowling Lessons in Greenfield IN | PBA Champion Mike DeVaney">
+<meta property="og:description" content="Learn from a 2-time PBA Tour champion. Private bowling lessons at Strike Force Lanes in Greenfield IN plus virtual coaching anywhere. Book your lesson by text.">
+<meta property="og:image" content="https://mike-devaney.com/assets/banner_2014_snbt_masters.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bowling Lessons in Greenfield IN | PBA Champion Mike DeVaney">
+<meta name="twitter:description" content="Learn from a 2-time PBA Tour champion. Private bowling lessons at Strike Force Lanes in Greenfield IN plus virtual coaching anywhere. Book your lesson by text.">
+<meta name="twitter:image" content="https://mike-devaney.com/assets/banner_2014_snbt_masters.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +102,7 @@ table.cal{border-collapse:collapse;width:100%;min-width:640px}
 button.slot{cursor:pointer;color:var(--open)}
 button.slot:hover{background:rgba(201,164,92,.12)}
 .slot.booked{cursor:default}
+.slot.held,.chip.held{cursor:default;color:var(--red,#c9a45c);opacity:.75;font-style:italic}
 .slot[aria-pressed="true"]{background:var(--red);color:#14211a}
 .booked{color:var(--ink-faint);text-decoration:line-through;font-weight:400}
 .none{color:var(--rule-dark)}
@@ -120,6 +132,11 @@ button.slot:hover{background:rgba(201,164,92,.12)}
 .bookbar .cancel{background:none;border:none;font:600 13px var(--sans);color:var(--ink-soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .bookbar .cancel:hover{color:var(--red)}
 body.has-bookbar{padding-bottom:150px}
+.bb-reserve{font:600 14px var(--sans);background:var(--red,#c9a45c);color:#14211a;border:none;border-radius:6px;padding:8px 14px;cursor:pointer}
+.bb-reserve[disabled]{opacity:.5;cursor:default}
+.bb-form{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.bb-form input{font:14px var(--sans);padding:8px;border-radius:6px;border:1px solid rgba(201,164,92,.4);background:var(--cell);color:var(--ink)}
+.bb-msg{font:14px var(--sans);margin-top:8px;color:var(--ink)}
 
 /* ---- credentials + scoresheet frames ---- */
 .frames{display:flex;border:2px solid var(--ink);background:var(--cell);margin:26px 0 10px}
@@ -205,7 +222,128 @@ body.in-portal #portal{display:block}
   .hero{padding:38px 0 44px}
   section{padding:44px 0}
 }
+
+/* ---- faq ---- */
+.faq{list-style:none;margin-top:26px}
+.faq li{border-bottom:1px solid var(--rule);padding:18px 2px}
+.faq h3{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:8px}
+.faq p{color:var(--ink-soft);font-size:16px;line-height:1.7}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": "https://mike-devaney.com/#business",
+      "name": "DeVaney Bowling",
+      "alternateName": "Mike DeVaney Consulting and Instruction",
+      "description": "Private bowling lessons with retired 2-time PBA Tour champion Mike DeVaney at Strike Force Lanes in Greenfield, Indiana. Virtual bowling lessons available anywhere.",
+      "url": "https://mike-devaney.com/",
+      "telephone": "+1-702-701-1494",
+      "email": "pba1817@gmail.com",
+      "image": "https://mike-devaney.com/assets/banner_2014_snbt_masters.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1539 W Main St",
+        "addressLocality": "Greenfield",
+        "addressRegion": "IN",
+        "postalCode": "46140",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7851,
+        "longitude": -85.7694
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Greenfield"},
+        {"@type": "City", "name": "Indianapolis"},
+        {"@type": "AdministrativeArea", "name": "Hancock County"},
+        {"@type": "State", "name": "Indiana"}
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mike.devaney.7"
+      ],
+      "founder": {"@id": "https://mike-devaney.com/#mike"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mike-devaney.com/#mike",
+      "name": "Mike DeVaney",
+      "jobTitle": "Bowling Coach",
+      "description": "Retired 2-time PBA Tour champion. Won the 2001 PBA Long Island Open and the 2009 PBA Scorpion Championship at the inaugural World Series of Bowling. Bowled on the PBA Tour from 1995 to 2016 with 17 televised championship-round appearances. Former Storm Products tour manager and head coach. Now teaches private bowling lessons at Strike Force Lanes in Greenfield, Indiana, plus virtual lessons.",
+      "award": [
+        "2001 PBA Long Island Open champion",
+        "2009 PBA Scorpion Championship, inaugural PBA World Series of Bowling"
+      ],
+      "worksFor": {"@id": "https://mike-devaney.com/#business"},
+      "url": "https://mike-devaney.com/",
+      "image": "https://mike-devaney.com/assets/banner_2014_snbt_masters.jpg",
+      "telephone": "+1-702-701-1494",
+      "email": "pba1817@gmail.com",
+      "sameAs": [
+        "https://www.pba.com/players/mike-devaney",
+        "https://www.facebook.com/mike.devaney.7"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mike-devaney.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are bowling lessons worth it, and how much can my average improve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you put in the practice between lessons, yes. Most bowlers are leaving pins on the table with a few fixable things: fundamentals, release, and reading the lane. I bowled on the PBA Tour from 1995 to 2016 and coached tour players at Storm, so we work on the things that actually move your average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do virtual bowling lessons work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You record video of your game at your home center and send it to me. We break it down together, I show you what I see, and you leave with clear things to work on. Virtual lessons work anywhere, so if Greenfield is too far, this is the way to do it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you teach beginners, or only competitive bowlers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. Some of my favorite lessons are with adult beginners, because it is easier to build good habits than to break bad ones. Wherever your game is, that is where we start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you coach youth, high school, and Jr Gold bowlers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Youth, high school, and Jr Gold bowlers are all welcome. The fundamentals we build at that age carry a bowler for life."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need my own ball and shoes for my first lesson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Bring your own gear if you have it. If you do not, we can start with house equipment at Strike Force Lanes, and when you are ready I will give you straight arsenal advice on what to buy and what to skip."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do lessons take place and how do I book one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In-person lessons are at Strike Force Lanes, 1539 W Main St in Greenfield, Indiana, a short drive east of Indianapolis. Virtual lessons happen wherever you are. Tap an open time on the schedule and it opens a text to me with the date filled in, or text me anytime at (702) 701-1494."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="stripe"></div>
@@ -223,8 +361,8 @@ body.in-portal #portal{display:block}
         <p class="hero-sub">Consulting and Instruction</p>
         <p class="hero-say">"Book Your Bowling Lesson Today!"</p>
         <p class="hero-meta">
-          Lessons at <strong>Strike Force Lanes</strong>, Greenfield, Indiana.<br>
-          Virtual lessons available.
+          Private bowling lessons at <strong>Strike Force Lanes</strong> in Greenfield, Indiana,<br>
+          a short drive east of Indianapolis. Virtual lessons available anywhere.
         </p>
         <div class="hero-cta">
           <a class="btn" id="heroBook" href="#">Book Now</a>
@@ -277,7 +415,7 @@ body.in-portal #portal{display:block}
       <li><span class="what"><a href="https://bowl.com/news/hess-wins-first-career-title-at-usbc-masters" rel="noopener">USBC Masters stepladder finalist</a></span><span class="yr">2011</span></li>
       <li><span class="what"><a href="https://bowl.com/news/veteran-mike-devaney-rides-rollercoaster-into-pba-chameleon-championship-qualifying-lead" rel="noopener">Led qualifying, PBA Chameleon Championship</a></span><span class="yr">2016</span></li>
     </ul>
-    <p class="statline"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">17 televised championship-round appearances across 256 PBA Tour events</a>. Now coaching at Strike Force Lanes in Greenfield.</p>
+    <p class="statline"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">17 televised championship-round appearances across 256 PBA Tour events</a>. Now coaching bowlers of all levels at Strike Force Lanes in Greenfield, Indiana.</p>
     <p class="press-head smallcaps">Selected Coverage</p>
     <ul class="ledger press">
       <li><span class="what"><a href="https://www.bowlersmart.com/2022/02/12/2006-pba-west-virginia-championship-bowling-finals-featuring-rash-scroggins-devaney-healey-jr/" rel="noopener">Watch the PBA West Virginia Championship finals, DeVaney in the title match on ESPN</a><small>Archived ESPN broadcast</small></span><span class="yr">2006</span></li>
@@ -293,7 +431,7 @@ body.in-portal #portal{display:block}
   <section class="wrap" id="lessons">
     <div class="sec-head">
       <h2>Private Lessons</h2>
-      <span class="sec-note">One on one, on the lanes or virtual</span>
+      <span class="sec-note">One on one coaching, on the lanes in Greenfield or virtual</span>
     </div>
     <ul class="lessons">
       <li>Develop Core Fundamentals</li>
@@ -309,9 +447,42 @@ body.in-portal #portal{display:block}
     <p class="lessons-note">Pick an open time above, or text Mike at <a href="sms:+17027011494">(702) 701-1494</a> to set something up.</p>
   </section>
 
+  <section class="wrap" id="faq">
+    <div class="sec-head">
+      <h2>Common Questions</h2>
+      <span class="sec-note">Straight answers, from Mike</span>
+    </div>
+    <ul class="faq">
+      <li>
+        <h3>Are bowling lessons worth it, and how much can my average improve?</h3>
+        <p>If you put in the practice between lessons, yes. Most bowlers are leaving pins on the table with a few fixable things: fundamentals, release, and reading the lane. I bowled on the PBA Tour from 1995 to 2016 and coached tour players at Storm, so we work on the things that actually move your average.</p>
+      </li>
+      <li>
+        <h3>How do virtual bowling lessons work?</h3>
+        <p>You record video of your game at your home center and send it to me. We break it down together, I show you what I see, and you leave with clear things to work on. Virtual lessons work anywhere, so if Greenfield is too far, this is the way to do it.</p>
+      </li>
+      <li>
+        <h3>Do you teach beginners, or only competitive bowlers?</h3>
+        <p>Both. Some of my favorite lessons are with adult beginners, because it is easier to build good habits than to break bad ones. Wherever your game is, that is where we start.</p>
+      </li>
+      <li>
+        <h3>Do you coach youth, high school, and Jr Gold bowlers?</h3>
+        <p>Yes. Youth, high school, and Jr Gold bowlers are all welcome. The fundamentals we build at that age carry a bowler for life.</p>
+      </li>
+      <li>
+        <h3>Do I need my own ball and shoes for my first lesson?</h3>
+        <p>No. Bring your own gear if you have it. If you do not, we can start with house equipment at Strike Force Lanes, and when you are ready I will give you straight arsenal advice on what to buy and what to skip.</p>
+      </li>
+      <li>
+        <h3>Where do lessons take place and how do I book one?</h3>
+        <p>In-person lessons are at Strike Force Lanes, 1539 W Main St in Greenfield, Indiana, a short drive east of Indianapolis. Virtual lessons happen wherever you are. Tap an open time on the schedule and it opens a text to me with the date filled in, or text me anytime at <a href="sms:+17027011494">(702) 701-1494</a>.</p>
+      </li>
+    </ul>
+  </section>
+
   <footer class="wrap">
     <div class="foot-grid">
-      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting and Instruction</p>
+      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting and Instruction<br>Bowling lessons in Greenfield, Indiana,<br>serving the Indianapolis area. Virtual lessons anywhere.</p>
       <p><b>Strike Force Lanes</b><br>1539 W Main St<br>Greenfield, IN 46140</p>
       <ul class="foot-links">
         <li><a href="tel:+17027011494">(702) 701-1494</a></li>
@@ -330,6 +501,14 @@ body.in-portal #portal{display:block}
   <div class="inner">
     <div class="sel"><b id="bbWhen"></b><span>Strike Force Lanes, Greenfield, IN</span></div>
     <a class="btn" id="bbLink" href="#">Book This Time</a>
+    <button type="button" id="bbReserve" class="bb-reserve">Reserve this time</button>
+    <form id="bbForm" class="bb-form" hidden>
+      <input id="bbName" type="text" maxlength="60" autocomplete="name" placeholder="Your name" required>
+      <input id="bbPhone" type="tel" maxlength="14" autocomplete="tel" placeholder="Your phone" required>
+      <input id="bbHp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <button type="submit" id="bbSend" class="bb-reserve">Hold it</button>
+    </form>
+    <div id="bbMsg" class="bb-msg" hidden></div>
     <button class="cancel" id="bbCancel" type="button">Cancel</button>
   </div>
 </div>
@@ -376,6 +555,7 @@ body.in-portal #portal{display:block}
 (function(){
   "use strict";
   var SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pub?output=csv";
+  var BOOKING_API = "";  // Apps Script /exec URL. Empty string = dormant, CSV-only site.
   var SHEET_HTML = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfaD0-fqLzF-0bWgX9hj754nhvba_VZCzkQt1SU5cEWegfBicoIUcDEevjJHg0XJTa-YEG9zqvNVLe/pubhtml";
   var PHONE = "+17027011494";
   var PIN_HASH = "MjE0Mw==";
@@ -429,6 +609,31 @@ body.in-portal #portal{display:block}
     return list;
   }
 
+  /* ---- API loader tier ---- */
+  function apiDaysToList(data){
+    var list=(data.days||[]).map(function(d){
+      return { date:d.label, ts:Date.parse(d.label),
+        slots:(d.slots||[]).map(function(s){
+          return { time:s.time, open:s.status==="OPEN", held:s.status==="PENDING" };
+        }) };
+    }).filter(function(d){ return d.slots.length&&!isNaN(d.ts); });
+    list.sort(function(a,b){ return a.ts-b.ts; });
+    return list;
+  }
+  function fetchApiSchedule(){
+    if(!BOOKING_API) return Promise.reject(new Error("dormant"));
+    var ctl=new AbortController();
+    var t=setTimeout(function(){ ctl.abort(); },5000);
+    return fetch(BOOKING_API,{signal:ctl.signal})
+      .then(function(res){ return res.json(); })   // HTML login page or non JSON throws here: the tripwire
+      .then(function(data){
+        clearTimeout(t);
+        if(!data||data.ok!==true) throw new Error("bad payload");
+        return apiDaysToList(data);
+      })
+      .catch(function(err){ clearTimeout(t); throw err; });
+  }
+
   /* ---- helpers ---- */
   function shortDate(d){ return d.replace(/,\s*\d{4}$/,""); }
   function dow(ts){ return new Date(ts).toLocaleDateString("en-US",{weekday:"short"}); }
@@ -447,6 +652,7 @@ body.in-portal #portal{display:block}
     document.querySelectorAll('[aria-pressed="true"]').forEach(function(el){ el.setAttribute("aria-pressed","false"); });
     bookbar.classList.remove("on");
     document.body.classList.remove("has-bookbar");
+    if(bbReserve){resetBookbarExtras(); bbReserve.hidden=true;}
   }
   function markSel(){
     if(!sel) return;
@@ -465,14 +671,65 @@ body.in-portal #portal{display:block}
     document.getElementById("bbWhen").textContent=when;
     document.getElementById("bbLink").href=smsHref("Hi Mike, I'd like to book a lesson on "+when+". My name is ");
     bookbar.classList.add("on");
+    resetBookbarExtras();
     document.body.classList.add("has-bookbar");
   }
   document.getElementById("bbCancel").addEventListener("click",clearSel);
 
+  var bbReserve=document.getElementById("bbReserve");
+  var bbForm=document.getElementById("bbForm");
+  var bbMsg=document.getElementById("bbMsg");
+  function resetBookbarExtras(){
+    bbReserve.hidden=!apiLive; bbReserve.disabled=false;
+    bbForm.hidden=true; bbMsg.hidden=true; bbMsg.textContent="";
+  }
+  bbReserve.addEventListener("click",function(){
+    bbReserve.hidden=true; bbForm.hidden=false;
+    document.getElementById("bbName").focus();
+  });
+  bbForm.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    if(!sel) return;
+    var name=document.getElementById("bbName").value.trim();
+    var phone=document.getElementById("bbPhone").value.replace(/\D/g,"");
+    if(name.length<2||phone.length<10){ bbMsg.hidden=false; bbMsg.textContent="Add your name and a 10 digit phone number."; return; }
+    var send=document.getElementById("bbSend");
+    send.disabled=true;                                  // double tap guard
+    var payload={action:"reserve",date:sel.date,time:sel.time,name:name,phone:phone,
+                 note:"",hp:document.getElementById("bbHp").value};
+    var when=shortDate(sel.date)+" at "+sel.time;
+    fetch(BOOKING_API,{method:"POST",body:JSON.stringify(payload)})  // no headers object AT ALL (CORS simple request)
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(res.ok){
+          bbForm.hidden=true; bbMsg.hidden=false;
+          bbMsg.textContent="Got it. That time is on hold. Mike will text you to lock it in.";
+          loadSchedule(true);                            // repaint, slot now shows Held
+        }else if(res.error==="TAKEN"){
+          bbForm.hidden=true; bbMsg.hidden=false;
+          bbMsg.textContent="That time just went. Pick another open time.";
+          loadSchedule(true);
+        }else{
+          reserveFallback(when,name);
+        }
+      })
+      .catch(function(){ reserveFallback(when,name); })
+      .then(function(){ send.disabled=false; });
+  });
+  function reserveFallback(when,name){
+    // Any non TAKEN failure (LOCKED, network, parse): finish the same booking over SMS, zero retyping.
+    bbForm.hidden=true; bbMsg.hidden=false; bbMsg.textContent="";
+    var a=document.createElement("a");
+    a.href=smsHref("Hi Mike, I'd like to book a lesson on "+when+". My name is "+name+".");
+    a.textContent="Text Mike to book "+when;
+    bbMsg.appendChild(document.createTextNode("Could not hold it online. "));
+    bbMsg.appendChild(a);
+  }
+
   function slotButton(day,s,tag){
     var el=document.createElement(s.open?"button":"span");
-    el.className=tag+(s.open?"":" booked");
-    el.textContent=(tag==="chip")?s.time:(s.open?"Open":"Booked");
+    el.className=tag+(s.open?"":(s.held?" held":" booked"));
+    el.textContent=(tag==="chip")?s.time:(s.open?"Open":(s.held?"Held":"Booked"));
     if(s.open){
       el.type="button";
       el.dataset.date=day.date; el.dataset.time=s.time;
@@ -485,6 +742,7 @@ body.in-portal #portal{display:block}
 
   /* ---- rendering: paged 5-day week view ---- */
   var PAGE_SIZE=5, page=0, dayList=[];
+  var apiLive=false;
   function renderGrid(){
     var host=document.getElementById("calGrid");
     host.innerHTML="";
@@ -555,7 +813,7 @@ body.in-portal #portal{display:block}
         if(interactive) chips.appendChild(slotButton(day,s,"chip"));
         else{
           var el=document.createElement("span");
-          el.className="chip"+(s.open?"":" booked");
+          el.className="chip"+(s.open?"":(s.held?" held":" booked"));
           el.textContent=s.time;
           chips.appendChild(el);
         }
@@ -571,10 +829,15 @@ body.in-portal #portal{display:block}
     var agenda=document.getElementById("calAgenda");
     status.style.display="block";
     status.textContent="Loading the schedule...";
-    fetch(SHEET_CSV+"&cb="+Date.now(),{cache:force?"no-store":"default"})
-      .then(function(res){ if(!res.ok) throw new Error("HTTP "+res.status); return res.text(); })
-      .then(function(text){
-        var list=extractDays(parseCSV(text));
+    fetchApiSchedule()
+      .then(function(list){ apiLive=true; return list; })
+      .catch(function(){
+        apiLive=false;
+        return fetch(SHEET_CSV+"&cb="+Date.now(),{cache:force?"no-store":"default"})
+          .then(function(res){ if(!res.ok) throw new Error("HTTP "+res.status); return res.text(); })
+          .then(function(text){ return extractDays(parseCSV(text)); });
+      })
+      .then(function(list){
         clearSel();
         dayList=list; page=0;
         document.getElementById("stamp").textContent="Updated "+new Date().toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});
