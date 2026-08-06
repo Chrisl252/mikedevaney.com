@@ -38,8 +38,6 @@ a:hover{color:var(--red)}
 .stripe{height:6px;background:var(--red)}
 .masthead{padding:20px 0 0;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:14px}
 .masthead .smallcaps{color:var(--ink)}
-.masthead .phone{font-weight:600;font-size:15px;text-decoration:none;color:var(--ink)}
-.masthead .phone:hover{color:var(--red)}
 
 /* ---- hero ---- */
 .hero{padding:52px 0 56px}
@@ -137,6 +135,8 @@ body.has-bookbar{padding-bottom:150px}
 .ledger .what small{display:block;color:var(--ink-soft);font-size:14px}
 .ledger .yr{font-family:var(--serif);font-weight:600;font-size:19px;white-space:nowrap}
 .ledger li.big .what{font-family:var(--serif);font-weight:600;font-size:19px}
+.ledger .what a,.statline a{text-decoration:none}
+.ledger .what a::after,.statline a::after{content:"\2197";font-size:.62em;vertical-align:super;margin-left:4px;color:var(--red)}
 .statline{margin-top:22px;font-size:16px;color:var(--ink-soft);line-height:1.7}
 .press-head{margin-top:44px;color:var(--ink-soft)}
 .ledger.press{margin-top:8px}
@@ -211,7 +211,6 @@ body.in-portal #portal{display:block}
 <div id="site">
   <header class="wrap masthead">
     <span class="smallcaps">DeVaney Bowling</span>
-    <a class="phone" href="tel:+17027011494">(702) 701-1494</a>
   </header>
 
   <div class="wrap hero">
@@ -271,12 +270,12 @@ body.in-portal #portal{display:block}
     </div>
     <p class="frames-cap">A Tour career, 1995 to 2016, scored across ten frames. The strikes are where the titles landed.</p>
     <ul class="ledger">
-      <li class="big"><span class="what">PBA Long Island Open<small>First national title</small></span><span class="yr">2001</span></li>
-      <li class="big"><span class="what">PBA Scorpion Championship<small>Won at the inaugural PBA World Series of Bowling</small></span><span class="yr">2009</span></li>
-      <li><span class="what">USBC Masters stepladder finalist</span><span class="yr">2011</span></li>
-      <li><span class="what">Led qualifying, PBA Chameleon Championship</span><span class="yr">2016</span></li>
+      <li class="big"><span class="what"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA Long Island Open</a><small>First national title</small></span><span class="yr">2001</span></li>
+      <li class="big"><span class="what"><a href="https://www.bowlingdigital.com/bowl/node/7450" rel="noopener">PBA Scorpion Championship</a><small>Won at the inaugural PBA World Series of Bowling</small></span><span class="yr">2009</span></li>
+      <li><span class="what"><a href="https://bowl.com/news/hess-wins-first-career-title-at-usbc-masters" rel="noopener">USBC Masters stepladder finalist</a></span><span class="yr">2011</span></li>
+      <li><span class="what"><a href="https://bowl.com/news/veteran-mike-devaney-rides-rollercoaster-into-pba-chameleon-championship-qualifying-lead" rel="noopener">Led qualifying, PBA Chameleon Championship</a></span><span class="yr">2016</span></li>
     </ul>
-    <p class="statline">17 televised championship-round appearances across 256 PBA Tour events. Now coaching at Strike Force Lanes in Greenfield.</p>
+    <p class="statline"><a href="https://www.pba.com/players/mike-devaney" rel="noopener">17 televised championship-round appearances across 256 PBA Tour events</a>. Now coaching at Strike Force Lanes in Greenfield.</p>
     <p class="press-head smallcaps">Selected Coverage</p>
     <ul class="ledger press">
       <li><span class="what"><a href="https://www.bowlersmart.com/2022/02/12/2006-pba-west-virginia-championship-bowling-finals-featuring-rash-scroggins-devaney-healey-jr/" rel="noopener">Watch the PBA West Virginia Championship finals, DeVaney in the title match on ESPN</a><small>Archived ESPN broadcast</small></span><span class="yr">2006</span></li>

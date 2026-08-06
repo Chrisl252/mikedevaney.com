@@ -1,13 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <clipPath id="pin">
-      <path d="M32 3c6.5 0 10 4.2 10 9.6 0 4.2-1.8 7.4-3.8 11.2-1.6 3.1-1.2 6.2.9 10.2 3.1 5.8 5.9 9.9 5.9 15.4C45 58.2 39.4 62 32 62s-13-3.8-13-12.6c0-5.5 2.8-9.6 5.9-15.4 2.1-4 2.5-7.1.9-10.2-2-3.8-3.8-7-3.8-11.2C22 7.2 25.5 3 32 3z"/>
-    </clipPath>
-  </defs>
-  <path d="M32 3c6.5 0 10 4.2 10 9.6 0 4.2-1.8 7.4-3.8 11.2-1.6 3.1-1.2 6.2.9 10.2 3.1 5.8 5.9 9.9 5.9 15.4C45 58.2 39.4 62 32 62s-13-3.8-13-12.6c0-5.5 2.8-9.6 5.9-15.4 2.1-4 2.5-7.1.9-10.2-2-3.8-3.8-7-3.8-11.2C22 7.2 25.5 3 32 3z"
-        fill="#fdfbf5" stroke="#241d15" stroke-width="2.6"/>
-  <g clip-path="url(#pin)">
-    <rect x="14" y="22.5" width="36" height="4.4" fill="#b3352c"/>
-    <rect x="14" y="30" width="36" height="4.4" fill="#b3352c"/>
-  </g>
+  <rect width="64" height="64" fill="#faf8f4"/>
+  <rect width="64" height="10" fill="#b0261a"/>
+  <text x="32" y="53" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="42" fill="#1a1511">D</text>
 </svg>
