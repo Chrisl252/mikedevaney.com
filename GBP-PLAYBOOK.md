@@ -13,11 +13,15 @@ Fixed facts used everywhere (NAP - keep byte-identical on every platform):
 
 ---
 
-## Step 0: Listing type decision (read first)
+## Step 0: Listing type decision (read first; updated 2026-08-06 after verification research)
 
-Use a HYBRID listing: visible address at Strike Force Lanes PLUS a service area layered on top. Do not use a hidden-address service-area business.
+Two legitimate paths. Ship path A now, upgrade to path B when the sign exists.
 
-The tradeoff in two sentences: a visible address wins the local pack because proximity is the #2 ranking factor and a hidden-address listing weakens the map pin, but it requires Strike Force Lanes' permission and a small permanent sign or counter placard for "Mike DeVaney Bowling Coaching" at the alley (Google's co-located business rule: own name, own phone, own category, staffed during stated hours, clear signage). If the alley refuses signage, fall back to a service-area listing with hidden address; it still works, it just ranks weaker and the rest of this playbook is unchanged.
+**Path A, fast (home-verified service-area business):** Mike verifies from his real home address. Google requires home-based businesses without storefront signage to hide the address; it stays on file for verification and is never shown publicly. Video verification for this path: house number or street sign outside, his coaching gear and marketing materials, proof of access or a business document. No alley permission needed, can be filed immediately. Known cost: Sterling Sky's published testing shows hidden-address listings rank measurably worse in the local pack (some fell out entirely), and proximity anchors to the hidden home location.
+
+**Path B, stronger (visible address at Strike Force Lanes):** a visible address wins the local pack because proximity is the #2 ranking factor. Requires the alley's permission and a small permanent sign or counter placard for "Mike DeVaney Bowling Coaching" (Google's co-located business rule: own name, own phone, own category, staffed during stated hours, clear signage), and the verification video walks from the lot to the sign.
+
+**Upgrade route A to B:** add the Strike Force address to the existing profile once permission + sign exist; Google re-verifies at the new location. Nothing else in this playbook changes.
 
 Prerequisites before filing anything:
 

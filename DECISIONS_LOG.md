@@ -38,3 +38,11 @@
 - **Favicon**: bowling pin SVG (cream pin, red neck stripes, dark green tile). Chris's "no
   favicon of a bowling pin wtf" meant it was MISSING from his tab (favicon cache), not
   unwanted; it was briefly swapped for a "D" lettermark and restored.
+
+## 2026-08-06 - GBP verification: two-path decision
+- Chris challenged the sign-only verification claim. Research confirmed BOTH paths are
+  legitimate: (A) home-verified service-area business, address hidden from public, video =
+  house number + gear + business doc, zero friction; (B) visible address at the alley with
+  permission + sign, ranks measurably better (Sterling Sky testing: hidden-address listings
+  drop in the local pack). Decision: file path A now, upgrade to B when the sign exists.
+  GBP-PLAYBOOK.md Step 0 rewritten; client email presents both honestly.
