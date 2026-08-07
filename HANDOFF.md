@@ -43,7 +43,7 @@ All of this needs Chris's authenticated browser (Chrome + Claude extension, or d
 3. Verify from curl per SETUP.md section E (GET JSON, POST reserve, TAKEN race test).
 4. Wire the site: set BOOKING_API to the /exec URL AND swap SHEET_CSV to the new published CSV
    in index.html in the same edit, `npm run deploy`, purge, curl-verify, commit, push.
-5. GBP: business.google.com signed in as chrislucas252@gmail.com (decision made: create under
+5. GBP: business.google.com signed in as chrislucas252@gmail.com. FILE PATH A (home-verified service-area listing, address hidden; see playbook Step 0 rewrite). Path B (Strike Force pin) is the later upgrade. (decision made: create under
    this account, transfer ownership to Mike's pba1817 later). Enter fields from GBP-PLAYBOOK.md
    Step 1 exactly. STOP at the verification screen; verification is Mike's live video at the
    alley after the sign is up. Do not file verification.
