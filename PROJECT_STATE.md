@@ -4,8 +4,9 @@ Updated: 2026-08-08 (client response received: email confirmed pba1817@gmail.com
 
 - LIVE at https://mike-devaney.com (200; sitemap/robots 200). Dark green/gold calendar-first
   page, SMS booking, portal PIN 2143, full on-page SEO (JSON-LD, FAQ, OG cards).
-- Client reply RECEIVED from Mike (2026-08-08): confirmed email pba1817@gmail.com, requested manual confirmation step for bookings (supported in Code.gs PENDING workflow), and asked where to submit GBP video.
-- GBP decision: file path A/B, primary email pba1817@gmail.com.
+- Client reply RECEIVED from Mike (2026-08-08): confirmed destination email pba1817@gmail.com, requested manual confirmation step for bookings (supported in Code.gs PENDING workflow), and asked where to submit GBP video.
+- Public display email: probowler@mike-devaney.com (on site & GBP; routed via Cloudflare Email Routing to pba1817@gmail.com).
+- GBP decision: file path A/B, public email probowler@mike-devaney.com, notification inbox pba1817@gmail.com.
 - Sheet: "DeVaney - Lesson Schedule" recreated under chrislucas252@gmail.com, ID
   1G_8BXvug8iC2xSOm06QTTSszV0d9puc1jH3XOoW60Ss (already in backend/Code.gs).
 - Deploy: `npm run deploy` + MANDATORY zone cache purge (zone a3047518123d05d95c9213fadacf7ecd).
