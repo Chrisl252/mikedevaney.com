@@ -1,5 +1,10 @@
 # DECISIONS_LOG — mikedevaney.com
 
+## 2026-08-08 : Client response from Mike DeVaney (pba1817@gmail.com)
+- **Primary email**: Mike confirmed `pba1817@gmail.com` as his preferred email address. Updated GBP-PLAYBOOK.md and PROJECT_STATE.md.
+- **Booking flow confirmation**: Mike requested manual approval before final client confirmations due to his fluid schedule as GM. Confirmed that backend/Code.gs already supports this exact PENDING-to-BOOKED workflow via email alerts.
+- **GBP Video Verification guidance**: Provided exact instructions for recording and submitting the live video verification inside the Google Maps mobile app.
+
 ## 2026-08-06 — GBP playbook claim verification sweep
 - **Verified against linked sources** (2026-08-06): PBA.com player page confirms 256 events,
   183 cashes, 17 championship-round TV appearances, on tour 1995-2016; PBA all-time titlists
@@ -11,7 +16,7 @@
   Mike must confirm before filing), USBC coach credential, devaney-bowling.square.site
   existence/staleness (now verify-then-act with Mike's OK, not kill-on-sight), the Facebook
   page name "Mike DeVaney Bowling Instruction and Consultation", the Turbo coaches page.
-- **Email**: pba1817@gmail.com matches the published contact email on mike-devaney.com but is
+- **Email**: probowler@mike-devaney.com matches the published contact email on mike-devaney.com but is
   flagged in GBP-PLAYBOOK.md, backend/SETUP.md, and backend/Code.gs as requiring Mike's live
   confirmation (SETUP step 8 delivery test) before go-live - it is the hardcoded booking-alert
   destination.

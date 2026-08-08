@@ -9,7 +9,7 @@ Fixed facts used everywhere (NAP - keep byte-identical on every platform):
 - Address: 1539 W Main St, Greenfield, IN 46140 (inside Strike Force Lanes)
 - Phone: (702) 701-1494
 - Website: https://mike-devaney.com
-- Email (account logins): probowler@mike-devaney.com (matches the contact email published on mike-devaney.com; [MIKE] confirm it is the inbox he actually checks - it is also the hardcoded booking-alert destination in backend/Code.gs, so a wrong address silently drops every booking notification)
+- Email (account logins): pba1817@gmail.com (confirmed by Mike as his primary email; also set as target for booking alerts in backend/Code.gs)
 
 ---
 
