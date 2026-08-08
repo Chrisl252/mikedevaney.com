@@ -534,6 +534,32 @@ body.in-portal #portal{display:block}
   </div>
   <div class="wrap portal-body">
     <p class="esc-hint">Press Esc anytime to go back to the site.</p>
+    <div class="stats-card" style="margin:20px 0 30px;padding:20px;border:1px solid var(--rule-dark);background:var(--cell);">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-bottom:14px;gap:8px;">
+        <h4 style="margin:0;font-family:var(--serif);font-size:20px;color:var(--ink);">Real Human Visitors &amp; Locations</h4>
+        <span style="font-size:12px;color:var(--ink-soft);">Automated bots &amp; web crawlers filtered out</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;">
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);">Real Human Uniques</div>
+          <div id="statTotalUniques" style="font-family:var(--serif);font-size:26px;font-weight:700;color:var(--red);margin-top:4px;">--</div>
+        </div>
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);">Human Page Views</div>
+          <div id="statTotalViews" style="font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ink);margin-top:4px;">--</div>
+        </div>
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);">Today's Humans</div>
+          <div id="statTodayUniques" style="font-family:var(--serif);font-size:26px;font-weight:700;color:var(--red);margin-top:4px;">--</div>
+        </div>
+        <div style="padding:12px;background:var(--paper);border:1px solid var(--rule);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);">Raw Server Hits</div>
+          <div id="statRawUniques" style="font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ink-faint);margin-top:4px;">--</div>
+        </div>
+      </div>
+      <div id="visitorMap" style="height:300px;border:1px solid var(--rule-dark);margin-top:16px;background:var(--paper);"></div>
+      <div id="locationList" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;"></div>
+    </div>
     <h4>How bookings work</h4>
     <ol>
       <li>A student taps an open time on the site and it opens a text to you with the date and time filled in.</li>
@@ -867,11 +893,69 @@ body.in-portal #portal{display:block}
   /* ---- coach portal gate ---- */
   var veil=document.getElementById("pinVeil");
   var pinInput=document.getElementById("pinInput");
+  var leafMap=null;
+  function loadLeaflet(cb){
+    if(window.L) return cb();
+    var link=document.createElement("link"); link.rel="stylesheet"; link.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+    document.head.appendChild(link);
+    var script=document.createElement("script"); script.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    script.onload=cb;
+    document.head.appendChild(script);
+  }
+  function renderVisitorMap(locs){
+    loadLeaflet(function(){
+      var mapEl=document.getElementById("visitorMap");
+      if(!mapEl) return;
+      if(!leafMap){
+        leafMap=L.map("visitorMap",{attributionControl:false}).setView([39.7851,-85.7694],6);
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{maxZoom:18}).addTo(leafMap);
+      }
+      (locs||[]).forEach(function(l){
+        if(l.lat&&l.lon){
+          var marker=L.circleMarker([l.lat,l.lon],{
+            radius:Math.min(14,Math.max(6,Math.sqrt(l.count)*2.5)),
+            color:"#c9a45c",
+            fillColor:"#c9a45c",
+            fillOpacity:0.75,
+            weight:2
+          }).addTo(leafMap);
+          marker.bindPopup("<b>"+l.city+(l.region?", "+l.region:"")+"</b><br>"+l.count+" human visit"+(l.count>1?"s":""));
+        }
+      });
+      setTimeout(function(){ if(leafMap) leafMap.invalidateSize(); },200);
+    });
+  }
+  function loadPortalStats(){
+    fetch("/api/stats")
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data && data.ok){
+          document.getElementById("statTotalUniques").textContent=(data.humanUniques||0).toLocaleString();
+          document.getElementById("statTotalViews").textContent=(data.humanViews||0).toLocaleString();
+          document.getElementById("statTodayUniques").textContent=(data.todayUniques||0).toLocaleString();
+          document.getElementById("statRawUniques").textContent=(data.rawUniques||0).toLocaleString();
+          var locHost=document.getElementById("locationList");
+          locHost.innerHTML="";
+          (data.locations||[]).slice(0,8).forEach(function(l){
+            var tag=document.createElement("span");
+            tag.style.cssText="font-size:12px;padding:4px 10px;background:var(--paper);border:1px solid var(--rule);color:var(--ink-soft);";
+            tag.textContent=l.city+(l.region?", "+l.region:"")+" ("+l.count+")";
+            locHost.appendChild(tag);
+          });
+          renderVisitorMap(data.locations||[]);
+        }
+      })
+      .catch(function(){});
+  }
+  try {
+    fetch("/api/hit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({webdriver:navigator.webdriver||false})}).catch(function(){});
+  } catch(e){}
   function openPortal(){
     veil.classList.remove("on");
     document.body.classList.add("in-portal");
     clearSel();
     window.scrollTo(0,0);
+    loadPortalStats();
   }
   function closePortal(){
     document.body.classList.remove("in-portal");
