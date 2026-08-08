@@ -51,6 +51,8 @@ All of this needs Chris's authenticated browser (Chrome + Claude extension, or d
    (Bing import first), Step 6 Search Console (DNS TXT via Cloudflare zone above + submit
    sitemap).
 
+53. Backlog Item: "Normalize our automated social medias" - Setup automated publishing pipeline for YouTube Shorts, IG Reels, TikTok, FB, X, and GBP based on social-media-automation-playbook.md.
+
 ## Human-only items (do not attempt)
 - Mike: alley permission + sign, the verification video, confirming probowler@mike-devaney.com is the
   inbox he checks, telling students about reviews.

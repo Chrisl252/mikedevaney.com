@@ -232,6 +232,19 @@ body.in-portal #portal{display:block}
 .faq li{border-bottom:1px solid var(--rule);padding:18px 2px}
 .faq h3{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:8px}
 .faq p{color:var(--ink-soft);font-size:16px;line-height:1.7}
+
+/* ---- lead generation upgrades ---- */
+.mobile-sticky-lead{display:none}
+.next-slot-banner{background:rgba(201,164,92,.12);border:1px solid var(--rule-dark);padding:12px 18px;margin-bottom:20px;font-size:15px;color:var(--ink);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.next-slot-banner b{color:var(--red)}
+.next-slot-banner a{background:var(--red);color:#fffdf9;padding:6px 14px;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.next-slot-banner a:hover{background:var(--red-dark)}
+
+@media(max-width:768px){
+  body{padding-bottom:70px}
+  .mobile-sticky-lead{display:block;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--cell);border-top:2px solid var(--red);padding:10px 16px;text-align:center;box-shadow:0 -4px 16px rgba(0,0,0,.4)}
+  .mobile-sticky-lead .btn{width:100%;padding:14px;font-size:13px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -389,6 +402,10 @@ body.in-portal #portal{display:block}
       <h2>The Lesson Schedule</h2>
       <span class="sec-note">Tap an open time to book it by text</span>
     </div>
+    <div class="next-slot-banner" id="nextSlotBanner" style="display:none">
+      <span><b>Earliest Open Lesson Slot:</b> <span id="nextSlotText">Loading...</span></span>
+      <a id="nextSlotBookBtn" href="#">Claim Slot</a>
+    </div>
     <div class="cal-tools">
       <span class="where">Strike Force Lanes, Greenfield, IN</span>
       <span><span class="stamp" id="stamp"></span> &nbsp;<button class="refresh" id="refreshBtn" type="button">Refresh</button></span>
@@ -535,6 +552,10 @@ body.in-portal #portal{display:block}
       <a href="#" class="portal-link" id="portalLink">Coach Portal</a>
     </div>
   </footer>
+
+  <div class="mobile-sticky-lead">
+    <a href="sms:+17027011494?&amp;body=Hi%20Mike,%20I'd%20like%20to%20book%20a%20bowling%20lesson.%20My%20name%20is%20" class="btn">Text Mike to Book (702) 701-1494</a>
+  </div>
 </div>
 
 <div class="bookbar" id="bookbar">
@@ -810,10 +831,37 @@ body.in-portal #portal{display:block}
   /* ---- rendering: paged 5-day week view ---- */
   var PAGE_SIZE=5, page=0, dayList=[];
   var apiLive=false;
+  function updateNextSlotBanner(){
+    var banner=document.getElementById("nextSlotBanner");
+    var text=document.getElementById("nextSlotText");
+    var btn=document.getElementById("nextSlotBookBtn");
+    if(!banner||!text||!btn) return;
+    for(var i=0;i<dayList.length;i++){
+      var day=dayList[i];
+      for(var j=0;j<day.slots.length;j++){
+        var s=day.slots[j];
+        if(s.open){
+          (function(dDate,sTime){
+            text.textContent=shortDate(dDate)+" at "+sTime;
+            btn.onclick=function(ev){
+              ev.preventDefault();
+              var btnEl=document.querySelector('[data-date="'+dDate+'"][data-time="'+sTime+'"]');
+              if(btnEl) btnEl.click();
+              else document.getElementById("schedule").scrollIntoView({behavior:"smooth"});
+            };
+          })(day.date,s.time);
+          banner.style.display="flex";
+          return;
+        }
+      }
+    }
+  }
+
   function renderGrid(){
     var host=document.getElementById("calGrid");
     host.innerHTML="";
     if(!dayList.length) return;
+    updateNextSlotBanner();
     var pages=Math.ceil(dayList.length/PAGE_SIZE);
     if(page>pages-1) page=pages-1;
     if(page<0) page=0;
