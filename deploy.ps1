@@ -7,6 +7,7 @@ Copy-Item *.html dist\
 Copy-Item sitemap.xml dist\
 Copy-Item robots.txt dist\
 Copy-Item manifest.json dist\
+if (Test-Path llms.txt) { Copy-Item llms.txt dist\ }
 Copy-Item -Recurse assets dist\assets
 
 npx wrangler deploy

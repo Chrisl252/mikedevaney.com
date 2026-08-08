@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mike-devaney.com/sitemap.xml
+# LLM Context Directory
+# https://mike-devaney.com/llms.txt
