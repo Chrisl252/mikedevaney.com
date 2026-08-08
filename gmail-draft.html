@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gmail Draft Helper | Mike DeVaney</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#14211a;color:#f4efe3;padding:40px;max-width:720px;margin:0 auto}
+h1{color:#c9a45c;font-size:24px;margin-bottom:20px}
+.box{background:#17251d;border:1px solid rgba(201,164,92,.3);padding:24px;border-radius:8px;margin-bottom:20px}
+label{display:block;font-weight:bold;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#c9a45c;margin-bottom:6px}
+input,textarea{width:100%;background:#14211a;border:1px solid rgba(201,164,92,.3);color:#f4efe3;padding:10px;font-size:15px;box-sizing:border-box;margin-bottom:16px}
+textarea{height:300px;font-family:inherit;line-height:1.5}
+.btn{display:inline-block;background:#c9a45c;color:#14211a;font-weight:bold;padding:14px 24px;text-decoration:none;border:none;cursor:pointer;font-size:15px;border-radius:4px;margin-right:12px}
+.btn:hover{background:#b8924a}
+.btn-sec{background:transparent;color:#f4efe3;border:1px solid #c9a45c}
+.btn-sec:hover{background:#c9a45c;color:#14211a}
+.copied{display:none;color:#c9a45c;font-weight:bold;margin-left:10px}
+</style>
+</head>
+<body>
+<h1>Gmail Draft for Mike DeVaney</h1>
+<div class="box">
+  <label>To</label>
+  <input type="text" id="to" value="probowler@mike-devaney.com">
+
+  <label>Subject</label>
+  <input type="text" id="su" value="Update on your website & instruction portal — mike-devaney.com">
+
+  <label>Email Body</label>
+  <textarea id="body">Hi Mike,
+
+Jarvis here, Chris's AI assistant. I wanted to send over a quick summary of the work we completed on your website and online instruction portal today (https://mike-devaney.com).
+
+Here is a brief breakdown of what we built for you:
+
+1. Expanded Authority Guides & 19 Live Pages: We built out dedicated technical guides covering PBA Animal Oil Patterns (Scorpion, Chameleon, Viper), High School Varsity Tryout Prep for local Hancock County & Indy student athletes, Junior Gold qualifier prep, and adult league average improvement.
+2. Interactive Bowling Calculator: Added a free client-side Rule of 31 & 3-6-9 Spare Math Calculator at https://mike-devaney.com/calculator.html to serve as a magnet for bowlers and pro shop recommendation links.
+3. AI Search & GEO Optimization: Standardized your credentials (2-Time PBA Tour Champion, 17 ESPN Finals, former Storm Products Head Coach) so AI engines like ChatGPT, Gemini, and Claude cite you as the #1 authority when users ask "how do I get better at bowling?"
+4. Authentic PBA Tour Media: Integrated real action and trophy photos from your 2009 PBA Scorpion Championship win, 2014 Masters, and Storm Products coaching days across the site.
+5. High-Demand Booking Framing: Updated the schedule grid to reflect high demand, showing "Request-Only" slots so your calendar reflects your high professional standing.
+6. Masked Email: Set probowler@mike-devaney.com as your primary public contact email across the site.
+
+Please take a look whenever you have a moment. If there is anything at all you'd like changed, added, or tweaked, Chris and I are right here to adjust it instantly.
+
+Best regards,
+
+Jarvis
+AI Assistant to Chris Lucas
+Bisket LLC / DiscountPantry</textarea>
+
+  <button class="btn" onclick="openGmail()">Open Compose in Gmail</button>
+  <button class="btn btn-sec" onclick="copyBody()">Copy Body to Clipboard</button>
+  <span class="copied" id="copied">Copied!</span>
+</div>
+
+<script>
+function openGmail() {
+  var to = encodeURIComponent(document.getElementById('to').value);
+  var su = encodeURIComponent(document.getElementById('su').value);
+  var body = encodeURIComponent(document.getElementById('body').value);
+  var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + su + '&body=' + body;
+  window.open(url, '_blank');
+}
+function copyBody() {
+  var t = document.getElementById('body');
+  t.select();
+  document.execCommand('copy');
+  var c = document.getElementById('copied');
+  c.style.display = 'inline';
+  setTimeout(function() { c.style.display = 'none'; }, 2000);
+}
+</script>
+</body>
+</html>
