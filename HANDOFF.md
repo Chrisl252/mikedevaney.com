@@ -28,14 +28,14 @@ and an automated booking backend so students reserve times themselves and Mike j
   "DeVaney - Lesson Schedule", ID 1G_8BXvug8iC2xSOm06QTTSszV0d9puc1jH3XOoW60Ss. backend/Code.gs
   already carries this ID. Mike's original sheet still feeds the live site for now.
 - backend/: Code.gs (Apps Script web app: GET schedule JSON, POST reserve flips OPEN to
-  PENDING with LockService, logs to a Requests tab, emails pba1817@gmail.com) + SETUP.md
+  PENDING with LockService, logs to a Requests tab, emails probowler@mike-devaney.com) + SETUP.md
   (deploy runbook) + site-hook.md (already applied; index.html has `BOOKING_API = ""` dormant).
 - Git: GitHub Chrisl252/mikedevaney.com is source of truth, everything pushed. Repo docs
   (PROJECT_STATE.md, DECISIONS_LOG.md) are current.
 
 ## The QUEUE (blocked only on a signed-in Chrome session)
 All of this needs Chris's authenticated browser (Chrome + Claude extension, or do it by hand):
-1. New sheet: File > Share > Publish to web > CSV (copy URL); Share to pba1817@gmail.com as
+1. New sheet: File > Share > Publish to web > CSV (copy URL); Share to probowler@mike-devaney.com as
    Editor, notifications off.
 2. Apps Script: script.google.com > new project "mike-devaney-booking" > paste backend/Code.gs
    (SHEET_ID already set) > manifest per SETUP.md section B > run testScan + testEmail (test
@@ -52,7 +52,7 @@ All of this needs Chris's authenticated browser (Chrome + Claude extension, or d
    sitemap).
 
 ## Human-only items (do not attempt)
-- Mike: alley permission + sign, the verification video, confirming pba1817@gmail.com is the
+- Mike: alley permission + sign, the verification video, confirming probowler@mike-devaney.com is the
   inbox he checks, telling students about reviews.
 - Chris: any Google sign-in, final say on GBP filing.
 

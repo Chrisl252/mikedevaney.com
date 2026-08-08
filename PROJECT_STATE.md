@@ -17,7 +17,7 @@ Updated: 2026-08-06 (session close: takeover build + client email sent)
 Outcome: autonomous booking live + Mike on Google Maps.
 DONE: site, SEO, sheet copy, backend code, playbook, client email sent.
 NEXT NODE (blocked on Chrome extension reconnecting, then ~30 min):
-  1. Publish new sheet to web as CSV; share to pba1817@gmail.com (Editor, no notify).
+  1. Publish new sheet to web as CSV; share to probowler@mike-devaney.com (Editor, no notify).
   2. script.google.com: paste backend/Code.gs (SHEET_ID set), manifest per SETUP.md B,
      run testScan/testEmail, deploy web app (Execute as Me / Anyone), copy /exec URL.
   3. Curl-verify per SETUP.md E, then set BOOKING_API + new SHEET_CSV in index.html,

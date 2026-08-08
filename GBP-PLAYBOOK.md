@@ -9,7 +9,7 @@ Fixed facts used everywhere (NAP - keep byte-identical on every platform):
 - Address: 1539 W Main St, Greenfield, IN 46140 (inside Strike Force Lanes)
 - Phone: (702) 701-1494
 - Website: https://mike-devaney.com
-- Email (account logins): pba1817@gmail.com (matches the contact email published on mike-devaney.com; [MIKE] confirm it is the inbox he actually checks - it is also the hardcoded booking-alert destination in backend/Code.gs, so a wrong address silently drops every booking notification)
+- Email (account logins): probowler@mike-devaney.com (matches the contact email published on mike-devaney.com; [MIKE] confirm it is the inbox he actually checks - it is also the hardcoded booking-alert destination in backend/Code.gs, so a wrong address silently drops every booking notification)
 
 ---
 
@@ -34,7 +34,7 @@ Prerequisites before filing anything:
 
 ## Step 1: Create the profile (business.google.com)
 
-[MIKE] signs in with pba1817@gmail.com and creates the listing. [CHRIS] can be added later as a Manager (Profile > Settings > Managers) to run posts, photos, and Q&A without owning it. Paste these fields exactly.
+[MIKE] signs in with probowler@mike-devaney.com and creates the listing. [CHRIS] can be added later as a Manager (Profile > Settings > Managers) to run posts, photos, and Q&A without owning it. Paste these fields exactly.
 
 **Business name**
 ```
@@ -195,8 +195,8 @@ No. Strike Force Lanes has house balls and rental shoes, and for a first lesson 
 
 Exact same name, address, phone, and website as the top of this file. One typo'd variant is worse than no citation.
 
-1. **Bing Places** (bingplaces.com) [CHRIS]: choose "Import from Google Business Profile" and sign in with pba1817@gmail.com. One click, done. Verify the imported category maps to something sensible (Sports school / coaching).
-2. **Apple Business Connect** (businessconnect.apple.com) [CHRIS with MIKE's Apple ID, or create one on pba1817@gmail.com]: feeds Apple Maps and Siri. Add the same NAP, category "Sports and Recreation > Coaching" or nearest fit, the description from Step 1, and the three photos. Verification is usually a phone call or text to (702) 701-1494, so [MIKE] must be ready to receive it.
+1. **Bing Places** (bingplaces.com) [CHRIS]: choose "Import from Google Business Profile" and sign in with probowler@mike-devaney.com. One click, done. Verify the imported category maps to something sensible (Sports school / coaching).
+2. **Apple Business Connect** (businessconnect.apple.com) [CHRIS with MIKE's Apple ID, or create one on probowler@mike-devaney.com]: feeds Apple Maps and Siri. Add the same NAP, category "Sports and Recreation > Coaching" or nearest fit, the description from Step 1, and the three photos. Verification is usually a phone call or text to (702) 701-1494, so [MIKE] must be ready to receive it.
 3. **Yelp** (biz.yelp.com) [CHRIS]: "Add a business". Same NAP, category "Sports Clubs / Coaches" nearest fit. Do NOT buy ads when they cold-call, and never solicit Yelp reviews (Yelp forbids asking, unlike Google).
 4. **Nextdoor** (business.nextdoor.com) [MIKE, needs a personal Nextdoor account on a real neighborhood]: create the business page with the same NAP. Strong for neighborhood-level "anyone know a bowling coach" threads in Hancock County; Mike can also answer those threads personally once the page exists.
 5. **Facebook** [MIKE]: if he has an existing page (reported name "Mike DeVaney Bowling Instruction and Consultation" - confirm with him, per Step 1), make sure it (or a renamed page matching the chosen business name) carries the exact NAP, the site link, and the same cover photo. If a page exists it is one of his strongest citations; just align it. If none exists, create one with the chosen name and NAP.

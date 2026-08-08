@@ -57,7 +57,7 @@ Surface Maintenance Guide: https://mike-devaney.com/bowling-ball-surface-mainten
 Thanks so much,
 Mike DeVaney
 (702) 701-1494
-pba1817@gmail.com
+probowler@mike-devaney.com
 ```
 
 ---
