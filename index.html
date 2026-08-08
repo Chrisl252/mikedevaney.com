@@ -399,21 +399,21 @@ body.in-portal #portal{display:block}
 
   <section id="schedule" class="wrap">
     <div class="sec-head">
-      <h2>The Lesson Schedule</h2>
-      <span class="sec-note">Tap an open time to book it by text</span>
+      <h2>Coaching Availability</h2>
+      <span class="sec-note">High demand — tap an opening below to request a slot</span>
     </div>
     <div class="next-slot-banner" id="nextSlotBanner" style="display:none">
-      <span><b>Earliest Open Lesson Slot:</b> <span id="nextSlotText">Loading...</span></span>
-      <a id="nextSlotBookBtn" href="#">Claim Slot</a>
+      <span><b>Limited Availability:</b> Next open slot <span id="nextSlotText">Loading...</span></span>
+      <a id="nextSlotBookBtn" href="#">Request Slot</a>
     </div>
     <div class="cal-tools">
       <span class="where">Strike Force Lanes, Greenfield, IN</span>
       <span><span class="stamp" id="stamp"></span> &nbsp;<button class="refresh" id="refreshBtn" type="button">Refresh</button></span>
     </div>
-    <div id="calStatus" class="cal-status">Loading the schedule...</div>
+    <div id="calStatus" class="cal-status">Loading availability...</div>
     <div id="calGrid"></div>
     <div id="calAgenda" class="agenda"></div>
-    <p class="cal-quiet">Don't see a time that works? Text Mike at <a href="sms:+17027011494">(702) 701-1494</a>.</p>
+    <p class="cal-quiet">Private lesson slots fill quickly. Need a custom time or waitlist opening? Text Mike directly at <a href="sms:+17027011494">(702) 701-1494</a>.</p>
   </section>
 
   <section class="wrap" id="record">
@@ -554,14 +554,14 @@ body.in-portal #portal{display:block}
   </footer>
 
   <div class="mobile-sticky-lead">
-    <a href="sms:+17027011494?&amp;body=Hi%20Mike,%20I'd%20like%20to%20book%20a%20bowling%20lesson.%20My%20name%20is%20" class="btn">Text Mike to Book (702) 701-1494</a>
+    <a href="sms:+17027011494?&amp;body=Hi%20Mike,%20I'd%20like%20to%20request%20a%20bowling%20lesson.%20My%20name%20is%20" class="btn">Request Lesson via SMS (702) 701-1494</a>
   </div>
 </div>
 
 <div class="bookbar" id="bookbar">
   <div class="inner">
     <div class="sel"><b id="bbWhen"></b><span>Strike Force Lanes, Greenfield, IN</span></div>
-    <a class="btn" id="bbLink" href="#">Book This Time</a>
+    <a class="btn" id="bbLink" href="#">Request This Time</a>
     <button type="button" id="bbReserve" class="bb-reserve">Reserve this time</button>
     <form id="bbForm" class="bb-form" hidden>
       <input id="bbName" type="text" maxlength="60" autocomplete="name" placeholder="Your name" required>
@@ -757,7 +757,7 @@ body.in-portal #portal{display:block}
     markSel();
     var when=shortDate(sel.date)+" at "+sel.time;
     document.getElementById("bbWhen").textContent=when;
-    document.getElementById("bbLink").href=smsHref("Hi Mike, I'd like to book a lesson on "+when+". My name is ");
+    document.getElementById("bbLink").href=smsHref("Hi Mike, I'd like to request a private lesson on "+when+". My name is ");
     bookbar.classList.add("on");
     resetBookbarExtras();
     document.body.classList.add("has-bookbar");
@@ -808,8 +808,8 @@ body.in-portal #portal{display:block}
     // Any non TAKEN failure (LOCKED, network, parse): finish the same booking over SMS, zero retyping.
     bbForm.hidden=true; bbMsg.hidden=false; bbMsg.textContent="";
     var a=document.createElement("a");
-    a.href=smsHref("Hi Mike, I'd like to book a lesson on "+when+". My name is "+name+".");
-    a.textContent="Text Mike to book "+when;
+    a.href=smsHref("Hi Mike, I'd like to request a private lesson on "+when+". My name is "+name+".");
+    a.textContent="Text Mike to request "+when;
     bbMsg.appendChild(document.createTextNode("Could not hold it online. "));
     bbMsg.appendChild(a);
   }
@@ -817,12 +817,12 @@ body.in-portal #portal{display:block}
   function slotButton(day,s,tag){
     var el=document.createElement(s.open?"button":"span");
     el.className=tag+(s.open?"":(s.held?" held":" booked"));
-    el.textContent=(tag==="chip")?s.time:(s.open?"Open":(s.held?"Held":"Booked"));
+    el.textContent=(tag==="chip")?s.time:(s.open?"Request":(s.held?"Pending":"Booked"));
     if(s.open){
       el.type="button";
       el.dataset.date=day.date; el.dataset.time=s.time;
       el.setAttribute("aria-pressed","false");
-      el.setAttribute("aria-label","Book "+shortDate(day.date)+" at "+s.time);
+      el.setAttribute("aria-label","Request lesson on "+shortDate(day.date)+" at "+s.time);
       el.addEventListener("click",function(){ pickSlot(el); });
     }
     return el;
