@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Bowling Calculators: Rule of 31 & Spare Math | Mike DeVaney</title>
+<meta name="description" content="Calculate your exact breakpoint board using the Rule of 31 and 3-6-9 spare adjustments. Free interactive bowling tool by 2-time PBA Champion Mike DeVaney.">
+<link rel="canonical" href="https://mike-devaney.com/calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mike-devaney.com/calculator.html">
+<meta property="og:site_name" content="DeVaney Bowling">
+<meta property="og:title" content="Interactive Bowling Calculators: Rule of 31 & Spare Math | Mike DeVaney">
+<meta property="og:description" content="Calculate your exact breakpoint board using the Rule of 31 and 3-6-9 spare adjustments. Free interactive bowling tool by 2-time PBA Champion Mike DeVaney.">
+<meta property="og:image" content="https://mike-devaney.com/assets/banner_2014_snbt_masters.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#14211a;
+  --cell:#17251d;
+  --ink:#f4efe3;
+  --ink-soft:#b4c0ae;
+  --ink-faint:#7f8d7a;
+  --rule:rgba(201,164,92,.16);
+  --rule-dark:rgba(201,164,92,.32);
+  --red:#c9a45c;
+  --red-dark:#b8924a;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Source Sans 3",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans)}
+a{color:var(--ink);text-decoration-color:var(--red);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--red)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+.smallcaps{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.stripe{height:6px;background:var(--red)}
+.masthead{padding:20px 0 0;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:14px}
+.btn{display:inline-block;background:var(--red);color:#fffdf9;font:700 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:17px 32px;text-decoration:none;border:none;cursor:pointer}
+.btn:hover{background:var(--red-dark);color:#fffdf9}
+.content{padding:48px 0 60px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,4.8vw,52px);margin-bottom:14px;line-height:1.1}
+.subhead{color:var(--ink-soft);font-size:19px;font-family:var(--serif);font-style:italic;margin-bottom:30px}
+.card{background:var(--cell);border:1px solid var(--rule-dark);padding:28px;margin:24px 0}
+.card h2{font-family:var(--serif);font-size:24px;margin-bottom:12px;color:var(--ink)}
+.card p{color:var(--ink-soft);font-size:16px;line-height:1.7;margin-bottom:12px}
+.calc-box{margin-top:20px;padding:20px;background:rgba(201,164,92,.06);border:1px solid var(--rule-dark)}
+.calc-label{display:block;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:8px}
+.calc-input,.calc-select{width:100%;max-width:320px;padding:12px 14px;background:var(--paper);border:1px solid var(--rule-dark);color:var(--ink);font:600 16px var(--sans);margin-bottom:16px}
+.calc-input:focus,.calc-select:focus{outline:none;border-color:var(--red)}
+.calc-result{margin-top:16px;padding:16px;background:var(--cell);border-left:4px solid var(--red);font-size:18px;font-weight:700;color:var(--ink)}
+footer{border-top:3px double var(--ink);margin-top:40px;padding:44px 0 30px}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;align-items:start}
+.foot-col p{font-size:15px;color:var(--ink-soft);line-height:1.7}
+.foot-col b{color:var(--ink);font-weight:600}
+.foot-head{color:var(--red);font-size:11px;letter-spacing:.16em;margin-bottom:12px;display:block;font-weight:700}
+.foot-links{list-style:none;font-size:14px;line-height:1.9}
+.foot-links a{color:var(--ink-soft);text-decoration:none}
+.foot-links a:hover{color:var(--red);text-decoration:underline}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Rule of 31 & Spare Math Bowling Calculator",
+      "applicationCategory": "SportsApplication",
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Person",
+        "name": "Mike DeVaney",
+        "jobTitle": "2-Time PBA Tour Champion & Former Storm Products Head Coach"
+      },
+      "description": "Interactive bowling calculator for calculating target breakpoint boards and 3-6-9 spare adjustments."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="stripe"></div>
+<div class="wrap masthead">
+  <a href="index.html" class="smallcaps" style="text-decoration:none">DeVaney Bowling</a>
+  <a href="index.html#schedule" class="btn">View Schedule</a>
+</div>
+
+<div class="wrap content">
+  <p class="smallcaps" style="color:var(--red);margin-bottom:8px">Free Interactive Bowling Tools</p>
+  <h1>Rule of 31 &amp; Spare Math Calculator</h1>
+  <p class="subhead">Calculate your target breakpoint board and 3-6-9 spare feet adjustments instantaneously.</p>
+
+  <div class="card">
+    <h2>1. The Rule of 31 Breakpoint Calculator</h2>
+    <p>The <strong>Rule of 31</strong> is the classic PBA Tour formula for finding your target exit board at the end of the oil pattern. Subtract 31 from the total oil pattern length in feet to determine your ideal exit board.</p>
+    
+    <div class="calc-box">
+      <label class="calc-label" for="patternLen">Oil Pattern Length (in feet):</label>
+      <input type="number" id="patternLen" class="calc-input" min="30" max="50" value="40" placeholder="e.g. 40">
+      <div id="rule31Result" class="calc-result">Target Breakpoint: Board 9 (at 40 feet)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2. The 3-6-9 Spare Adjustment Calculator</h2>
+    <p>Select the pin target to calculate your foot shift relative to your strike stance while keeping your eye target over the center arrow.</p>
+    
+    <div class="calc-box">
+      <label class="calc-label" for="pinTarget">Target Spare Pin:</label>
+      <select id="pinTarget" class="calc-select">
+        <option value="10">10-Pin (Right side corner)</option>
+        <option value="6">6-Pin (Right side mid)</option>
+        <option value="3">3-Pin (Right side front)</option>
+        <option value="7">7-Pin (Left side corner)</option>
+        <option value="4">4-Pin (Left side mid)</option>
+        <option value="2">2-Pin (Left side front)</option>
+      </select>
+      <div id="spareResult" class="calc-result">Move feet 9 boards LEFT. Cross center arrow with plastic spare ball.</div>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;padding:36px 20px">
+    <h2>Want 1-on-1 Guidance on Your Game?</h2>
+    <p style="margin-bottom:20px">Book a private lesson at Strike Force Lanes in Greenfield, IN or send video for remote coaching.</p>
+    <a class="btn" href="sms:+17027011494?&amp;body=Hi%20Mike,%20I'd%20like%20to%20book%20a%20lesson.%20My%20name%20is%20">Text Mike (702) 701-1494</a>
+  </div>
+</div>
+
+<footer class="wrap">
+  <div class="foot-grid">
+    <div class="foot-col foot-brand">
+      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting &amp; Instruction<br>Strike Force Lanes, 1539 W Main St<br>Greenfield, IN 46140</p>
+      <p style="margin-top:10px"><a href="tel:+17027011494" style="color:var(--red);font-weight:700;text-decoration:none">(702) 701-1494</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Coaching Services</p>
+      <ul class="foot-links">
+        <li><a href="index.html">Main Schedule &amp; Rates</a></li>
+        <li><a href="youth-bowling-lessons-greenfield-in.html">Youth &amp; High School Lessons</a></li>
+        <li><a href="league-bowling-average-improvement.html">League Average Improvement</a></li>
+        <li><a href="virtual-bowling-lessons.html">Virtual Video Lessons</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Service Areas</p>
+      <ul class="foot-links">
+        <li><a href="bowling-lessons-indianapolis-in.html">Indianapolis Bowling Lessons</a></li>
+        <li><a href="bowling-lessons-carmel-fishers-in.html">Carmel &amp; Fishers Lessons</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Guides &amp; Credentials</p>
+      <ul class="foot-links">
+        <li><a href="calculator.html">Rule of 31 Calculator</a></li>
+        <li><a href="how-to-get-better-at-bowling.html">How to Get Better at Bowling</a></li>
+        <li><a href="learn-how-to-bowl.html">Learn How to Bowl Guide</a></li>
+        <li><a href="reading-lane-transition-guide.html">Lane Transition Guide</a></li>
+        <li><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA Player Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var lenInput = document.getElementById("patternLen");
+  var res31 = document.getElementById("rule31Result");
+  function calc31() {
+    var val = parseInt(lenInput.value, 10);
+    if (isNaN(val) || val < 30 || val > 52) {
+      res31.textContent = "Please enter a pattern length between 30 and 52 feet.";
+      return;
+    }
+    var board = val - 31;
+    res31.textContent = "Target Breakpoint: Board " + board + " (at " + (val - 3) + " to " + val + " feet)";
+  }
+  if (lenInput) lenInput.addEventListener("input", calc31);
+
+  var pinSelect = document.getElementById("pinTarget");
+  var resSpare = document.getElementById("spareResult");
+  var spareMap = {
+    "10": "Move feet 9 boards LEFT. Aim across 3rd arrow / center board with polyester spare ball.",
+    "6": "Move feet 6 boards LEFT. Aim across center arrow.",
+    "3": "Move feet 3 boards LEFT. Aim across 2nd arrow.",
+    "7": "Move feet 9 boards RIGHT. Aim across 3rd arrow / center board with polyester spare ball.",
+    "4": "Move feet 6 boards RIGHT. Aim across center arrow.",
+    "2": "Move feet 3 boards RIGHT. Aim across 2nd arrow."
+  };
+  function calcSpare() {
+    var val = pinSelect.value;
+    resSpare.textContent = spareMap[val] || "";
+  }
+  if (pinSelect) pinSelect.addEventListener("change", calcSpare);
+});
+</script>
+</body>
+</html>
