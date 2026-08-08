@@ -48,11 +48,14 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,4.8vw,52px);mar
 .card p{color:var(--ink-soft);font-size:16px;line-height:1.7;margin-bottom:12px}
 .card ul,.card ol{margin:10px 0 10px 20px;color:var(--ink-soft)}
 .card ul li,.card ol li{padding:4px 0}
-footer{border-top:3px double var(--ink);margin-top:40px;padding:40px 0 30px}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.foot-grid p{font-size:15px;color:var(--ink-soft);line-height:1.8}
-.foot-grid b{color:var(--ink);font-weight:600}
-.foot-links{list-style:none;font-size:15px;line-height:2}
+footer{border-top:3px double var(--ink);margin-top:40px;padding:44px 0 30px}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;align-items:start}
+.foot-col p{font-size:15px;color:var(--ink-soft);line-height:1.7}
+.foot-col b{color:var(--ink);font-weight:600}
+.foot-head{color:var(--red);font-size:11px;letter-spacing:.16em;margin-bottom:12px;display:block;font-weight:700}
+.foot-links{list-style:none;font-size:14px;line-height:1.9}
+.foot-links a{color:var(--ink-soft);text-decoration:none}
+.foot-links a:hover{color:var(--red);text-decoration:underline}
 </style>
 <script type="application/ld+json">
 {
@@ -108,12 +111,39 @@ footer{border-top:3px double var(--ink);margin-top:40px;padding:40px 0 30px}
 
 <footer class="wrap">
   <div class="foot-grid">
-    <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting and Instruction<br>Strike Force Lanes, Greenfield, IN</p>
-    <ul class="foot-links">
-      <li><a href="index.html">Main Schedule</a></li>
-      <li><a href="best-bowling-coaches-indianapolis-in.html">Best Indy Coaches Guide</a></li>
-      <li><a href="reading-lane-transition-guide.html">Lane Transition Guide</a></li>
-    </ul>
+    <div class="foot-col foot-brand">
+      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting &amp; Instruction<br>Strike Force Lanes, 1539 W Main St<br>Greenfield, IN 46140</p>
+      <p style="margin-top:10px"><a href="tel:+17027011494" style="color:var(--red);font-weight:700;text-decoration:none">(702) 701-1494</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Coaching Services</p>
+      <ul class="foot-links">
+        <li><a href="index.html">Main Schedule &amp; Rates</a></li>
+        <li><a href="youth-bowling-lessons-greenfield-in.html">Youth &amp; High School Lessons</a></li>
+        <li><a href="league-bowling-average-improvement.html">League Average Improvement</a></li>
+        <li><a href="virtual-bowling-lessons.html">Virtual Video Lessons</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Service Areas</p>
+      <ul class="foot-links">
+        <li><a href="bowling-lessons-indianapolis-in.html">Indianapolis Bowling Lessons</a></li>
+        <li><a href="bowling-lessons-carmel-fishers-in.html">Carmel &amp; Fishers Lessons</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-head smallcaps">Guides &amp; Credentials</p>
+      <ul class="foot-links">
+        <li><a href="reading-lane-transition-guide.html">Lane Transition Guide</a></li>
+        <li><a href="bowling-ball-surface-maintenance-guide.html">Ball Surface &amp; Abralon Guide</a></li>
+        <li><a href="spares-10-pin-system-guide.html">10-Pin Spare System Guide</a></li>
+        <li><a href="best-bowling-coaches-indianapolis-in.html">Indy Bowling Coaches Guide</a></li>
+        <li><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA Player Profile</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 </body>

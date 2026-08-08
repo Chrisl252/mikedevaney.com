@@ -171,11 +171,14 @@ body.has-bookbar{padding-bottom:150px}
 .lessons-note{margin-top:20px;color:var(--ink-soft);font-size:15px}
 
 /* ---- footer ---- */
-footer{border-top:3px double var(--ink);margin-top:20px;padding:40px 0 30px}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.foot-grid p{font-size:15px;color:var(--ink-soft);line-height:1.8}
-.foot-grid b{color:var(--ink);font-weight:600}
-.foot-links{list-style:none;font-size:15px;line-height:2}
+footer{border-top:3px double var(--ink);margin-top:40px;padding:44px 0 30px}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;align-items:start}
+.foot-col p{font-size:15px;color:var(--ink-soft);line-height:1.7}
+.foot-col b{color:var(--ink);font-weight:600}
+.foot-head{color:var(--red);font-size:11px;letter-spacing:.16em;margin-bottom:12px;display:block;font-weight:700}
+.foot-links{list-style:none;font-size:14px;line-height:1.9}
+.foot-links a{color:var(--ink-soft);text-decoration:none}
+.foot-links a:hover{color:var(--red);text-decoration:underline}
 .portal-row{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);text-align:center}
 .portal-link{font-size:12px;color:var(--ink-faint);text-decoration:none;letter-spacing:.06em}
 .portal-link:visited{color:var(--ink-faint)}
@@ -489,24 +492,38 @@ body.in-portal #portal{display:block}
 
   <footer class="wrap">
     <div class="foot-grid">
-      <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting and Instruction<br>Bowling lessons in Greenfield, Indiana,<br>serving the Indianapolis area. Virtual lessons anywhere.</p>
-      <p><b>Strike Force Lanes</b><br>1539 W Main St<br>Greenfield, IN 46140</p>
-      <ul class="foot-links">
-        <li><a href="tel:+17027011494">(702) 701-1494</a></li>
-        <li><a href="bowling-lessons-indianapolis-in.html">Indianapolis Bowling Lessons</a></li>
-        <li><a href="bowling-lessons-carmel-fishers-in.html">Carmel &amp; Fishers Bowling Lessons</a></li>
-        <li><a href="best-bowling-coaches-indianapolis-in.html">Best Indy Bowling Coaches Guide</a></li>
-        <li><a href="don-mitchell-pro-shop-bowling-coaching-alternative.html">Pro Shop vs Private PBA Instruction</a></li>
-        <li><a href="usbc-silver-vs-pba-tour-champion-coaching.html">USBC vs PBA Tour Champion Coaching</a></li>
-        <li><a href="youth-bowling-lessons-greenfield-in.html">Youth &amp; High School Lessons</a></li>
-        <li><a href="virtual-bowling-lessons.html">Virtual Video Lessons</a></li>
-        <li><a href="league-bowling-average-improvement.html">League Average Improvement</a></li>
-        <li><a href="reading-lane-transition-guide.html">Reading Lane Transition Guide</a></li>
-        <li><a href="bowling-ball-surface-maintenance-guide.html">Ball Surface &amp; Abralon Guide</a></li>
-        <li><a href="spares-10-pin-system-guide.html">10-Pin Spare Conversion System</a></li>
-        <li><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA player profile</a></li>
-        <li><a href="https://www.facebook.com/mike.devaney.7" rel="noopener">Facebook</a></li>
-      </ul>
+      <div class="foot-col foot-brand">
+        <p><b>DeVaney Bowling</b><br>Mike DeVaney Consulting &amp; Instruction<br>Strike Force Lanes, 1539 W Main St<br>Greenfield, IN 46140</p>
+        <p style="margin-top:10px"><a href="tel:+17027011494" style="color:var(--red);font-weight:700;text-decoration:none">(702) 701-1494</a></p>
+      </div>
+
+      <div class="foot-col">
+        <p class="foot-head smallcaps">Coaching Services</p>
+        <ul class="foot-links">
+          <li><a href="youth-bowling-lessons-greenfield-in.html">Youth &amp; High School Lessons</a></li>
+          <li><a href="league-bowling-average-improvement.html">League Average Improvement</a></li>
+          <li><a href="virtual-bowling-lessons.html">Virtual Video Lessons</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <p class="foot-head smallcaps">Service Areas</p>
+        <ul class="foot-links">
+          <li><a href="bowling-lessons-indianapolis-in.html">Indianapolis Bowling Lessons</a></li>
+          <li><a href="bowling-lessons-carmel-fishers-in.html">Carmel &amp; Fishers Lessons</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <p class="foot-head smallcaps">Guides &amp; Credentials</p>
+        <ul class="foot-links">
+          <li><a href="reading-lane-transition-guide.html">Lane Transition Guide</a></li>
+          <li><a href="bowling-ball-surface-maintenance-guide.html">Ball Surface &amp; Abralon Guide</a></li>
+          <li><a href="spares-10-pin-system-guide.html">10-Pin Spare System Guide</a></li>
+          <li><a href="best-bowling-coaches-indianapolis-in.html">Indy Bowling Coaches Guide</a></li>
+          <li><a href="https://www.pba.com/players/mike-devaney" rel="noopener">PBA Player Profile</a></li>
+        </ul>
+      </div>
     </div>
     <div class="portal-row">
       <a href="#" class="portal-link" id="portalLink">Coach Portal</a>
