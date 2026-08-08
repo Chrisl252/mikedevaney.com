@@ -3,9 +3,10 @@ Set-Location $PSScriptRoot
 
 if (Test-Path dist) { Remove-Item -Recurse -Force dist }
 New-Item -ItemType Directory dist | Out-Null
-Copy-Item index.html dist\
+Copy-Item *.html dist\
 Copy-Item sitemap.xml dist\
 Copy-Item robots.txt dist\
+Copy-Item manifest.json dist\
 Copy-Item -Recurse assets dist\assets
 
 npx wrangler deploy

@@ -1,0 +1,17 @@
+{
+  "name": "DeVaney Bowling Consulting & Instruction",
+  "short_name": "DeVaney Bowling",
+  "description": "Private bowling lessons in Greenfield IN & virtual coaching anywhere with 2-time PBA champion Mike DeVaney.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14211a",
+  "theme_color": "#c9a45c",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
